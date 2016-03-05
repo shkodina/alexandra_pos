@@ -1,0 +1,9 @@
+{
+  "rootdir": "./dbdata/"
+  , "teadb":"tea.db"
+  , "coffeedb":"coffe.db"
+  , "bubbledb":"bubble.db"
+  , "sportdb" :"sport.db"
+  , "juicedb" : "juice.db"
+  , "checksdb" : "checks.db"
+}

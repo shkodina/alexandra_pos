@@ -160,6 +160,15 @@ function onListening() {
         : 'port ' + addr.port;
     debug('Listening on ' + bind);
 }
+//***********************************************************
+//***********************************************************
+//
+//		 M Y   S E R V E R
+//
+//***********************************************************
+
+var saleserver = require("./saleserver.js");
+
 
 //***********************************************************
 //***********************************************************
@@ -167,32 +176,20 @@ function onListening() {
 //		 S O C K E T . I O
 //
 //***********************************************************
-//***********************************************************
-
-var counter = {
-    count: 1,
-    inc: function () {
-        this.count += 1;
-    },
-    dec: function () {
-        this.count -= 1;
-    },
-    value: function () {
-        return this.count;
-    }
-}
 
 var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
 
-    socket.on('sayHello', function (msg) {
-        console.log("from sayHello start");
-        console.log(msg);
-        console.log("from sayHello stop");
-//        tools.groups.add(msg);
-//        io.emit('updateGroups', groups);
+    socket.on('addCoffee', function (msg) {
+        saleserver.addCoffe(msg);
     });
+    socket.on('updateCoffee', function (msg) {
+        saleserver.updateCoffee(msg);
+    });
+
+
+
 
     socket.on('sayOK', function (msg) {
         console.log("from sayOK start");
@@ -209,11 +206,6 @@ io.on('connection', function (socket) {
 //***********************************************************
 //***********************************************************
 
-setInterval(function () {
-    counter.inc();
-    io.emit('printCounter', counter);
-
-}, 1000);
 
 var fs = require('fs');
 
@@ -225,12 +217,6 @@ setInterval(function () {
         console.log("From parser error", error);
     }
 
-/*
-    var data_t = fs.readFileSync('./message.json');
-    var data = JSON.parse(data_t);
-
-    io.emit('printMeas', data);
-*/
 }, 2500);
 
 module.exports = app;
