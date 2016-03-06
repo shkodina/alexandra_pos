@@ -189,6 +189,10 @@ io.on('connection', function (socket) {
     });
 
 
+    socket.on('test', function (msg) {
+        console.log("test from admin", msg);
+    });
+
 
 
     socket.on('sayOK', function (msg) {
@@ -212,9 +216,9 @@ var fs = require('fs');
 setInterval(function () {
 
     try{
-        io.emit('printMeas', JSON.parse(fs.readFileSync('./message.json')));
+        ;
     }catch (error){
-        console.log("From parser error", error);
+        ;
     }
 
 }, 2500);
