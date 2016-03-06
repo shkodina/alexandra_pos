@@ -180,6 +180,36 @@ var saleserver = require("./saleserver.js");
 var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
+    socket.on('updateMeFromDB', function (msg) {
+        console.log("web asked all data from db");
+
+        saleserver.getAllCoffee();
+
+
+        console.log("web asked all data from db finished");
+    });
+
+    socket.on('addCurDrinkToDB', function (msg) {
+        switch (msg.type){
+            case "coffee":
+                console.log("ask add coffee");
+                saleserver.addCoffee(msg);
+                break;
+            case "tea":
+                return tealist;
+            case "bubble":
+                return bubblelist;
+            case "juice" :
+                return juicelist;
+            case "sport" :
+                return sportlist;
+            default :
+                return {};
+        }
+
+    });
+
+
 
     socket.on('addCoffee', function (msg) {
         saleserver.addCoffe(msg);
@@ -192,6 +222,7 @@ io.on('connection', function (socket) {
     socket.on('test', function (msg) {
         console.log("test from admin", msg);
     });
+
 
 
 
@@ -215,12 +246,34 @@ var fs = require('fs');
 
 setInterval(function () {
 
+    saleserver.drinklists.forEach(function(item){
+        if (item.isupdated){
+            switch (item.type){
+                case "coffee":
+                    io.emit('setCoffeeListFromDB', item.list);
+                    break;
+                default:
+                    console.log("no type " + item.type + " for update");
+                    break;
+            }
+            item.isupdated = false;
+        }
+    })
+
+    return;
+
+    socket.emit('setCoffeeListFromDB', 0);
+    socket.emit('setTeaListFromDB', 0);
+    socket.emit('setBubbleListFromDB', 0);
+    socket.emit('setJuiceListFromDB', 0);
+    socket.emit('setSportListFromDB', 0);
+
     try{
         ;
     }catch (error){
         ;
     }
 
-}, 2500);
+}, 1000);
 
 module.exports = app;

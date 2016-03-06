@@ -7,9 +7,71 @@ angular.module('admindrinks', [
 
         var socket = io.connect();
 
+        var coffeelist = {};
+        var tealist = {};
+        var bubblelist = {};
+        var juicelist = {};
+        var sportlist = {};
+
+        socket.emit('updateMeFromDB',0);
+
+        socket.on('setCoffeeListFromDB', function(mes){
+            console.log("setCoffeeListFromDB mes = ", mes);
+
+            mes.forEach(function(item){
+                console.log ("coffee from list = ", item);
+            })
+
+            coffeelist = mes;
+        });
+        socket.on('setTeaListFromDB', function(mes){
+            tealist = mes;
+        });
+        socket.on('setBubbleListFromDB', function(mes){
+            bubblelist = mes;
+        });
+        socket.on('setJuiceListFromDB', function(mes){
+            juicelist = mes;
+        });
+        socket.on('setSportListFromDB', function(mes){
+            sportlist = mes;
+        });
+
+
         return {
             getSocket: function () {
                 return socket;
+            }
+            , getDrink: function(){
+                return {
+                    type : "notype"
+                    , name : "noname"
+                    , price : 100
+                    , ingredients : []
+                }
+            }
+            , getIngridient: function (){
+                return {
+                    name : name
+                    , mass : mass
+                    , count :count
+                }
+            }
+            , getDrinkList : function(drinktype){
+                switch (drinktype){
+                    case "coffee":
+                        return coffeelist;
+                    case "tea":
+                        return tealist;
+                    case "bubble":
+                        return bubblelist;
+                    case "juice" :
+                        return juicelist;
+                    case "sport" :
+                        return sportlist;
+                    default :
+                        return {};
+                }
             }
         }
     })
@@ -17,63 +79,26 @@ angular.module('admindrinks', [
         var main = this;
         main.title = 'Bubble Maker';
 
-        main.curdrink = {
-            type : "Просто коктейль"
-        };
-        main.cur_mea = {};
+        main.curdrink = valueService.getDrink();
+        main.curlist = valueService.getDrinkList(main.curdrink.type);
 
-        main.chooseCoffee = function () {
-            main.curdrink.type = "coffee"
-            valueService.getSocket().emit("test", main.curdrink);
+        main.chooseDrinkType = function (drinktype) {
+            main.curdrink.type = drinktype;
+            main.curlist = valueService.getDrinkList(main.curdrink.type);
         };
 
-        main.chooseTea = function () {
-            main.curdrink.type = "tea"
-            valueService.getSocket().emit("test", main.curdrink);
+        main.addCurDrinkToDB = function () {
+            valueService.getSocket().emit('addCurDrinkToDB',main.curdrink);
         };
 
-        main.chooseJuice = function () {
-            main.curdrink.type = "juice"
-            valueService.getSocket().emit("test", main.curdrink);
-        };
-
-        main.chooseBubble = function () {
-            main.curdrink.type = "bubble"
-            valueService.getSocket().emit("test", main.curdrink);
-        };
-
-        main.chooseSport = function () {
-            main.curdrink.type = "sport"
-            valueService.getSocket().emit("test", main.curdrink);
-        };
+        main.setCurentItem = function(item){
+            main.curdrink = item;
+        }
 
 
 
         valueService.getSocket().on('printMeas', function (mes) {
-            //console.log('printMeas', mes);
-
-            //console.log("compass", compass); // this will show the info it in firebug console
-
-            for (var index in mes) {
-                //console.log("mes index",compass[mes[index].way]);
-                mes[index].compass = valueService.getCompass()[mes[index].way];
-                //console.log("mes index compass",mes[index].compass);
-
-                mes[index].quality_text = (mes[index].quality == "0") ? "Измерение недостоверно" : " ";
-
-                if (mes[index].threshold == "1") {
-                    mes[index].warning = true;
-                }
-
-                if (mes[index].threshold == "2") {
-                    mes[index].alert = true;
-                }
-            }
-
-            $scope.main.meas = mes;
             $scope.$apply();
-
-            console.log("printMeas", "All Ok");
         });
     })
     .directive('item', function () {

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html ng-app="admindrinks">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <title>Admin Drinks</title>
+
+    <script src="../javascripts/jquery.min.js"></script>
+    <script src="../javascripts/angular.js"></script>
+    <script src="../javascripts/angular-animate.js"></script>
+    <script src="../javascripts/angular-messages.js"></script>
+    <script src="../javascripts/angular-ui-router.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="admin_drinks.js"></script>
+</head>
+
+<body ng-controller="MainCtrl as main">
+<div id="header">
+    <div id="menu">
+        <ul>
+            <li ng-click="main.chooseDrinkType('coffee')"><a href="#">КОФЕ</a></li>
+            <li ng-click="main.chooseDrinkType('tea')"><a href="#">ЧАЙ</a></li>
+            <li ng-click="main.chooseDrinkType('juice')"><a href="#">СОК</a></li>
+            <li ng-click="main.chooseDrinkType('bubble')"><a href="#">BUBBLE</a></li>
+            <li ng-click="main.chooseDrinkType('sport')"><a href="#">СПОРТПИТ</a></li>
+        </ul>
+    </div>
+    <!-- end #menu -->
+    <div id="logo">
+        <h1><a href="#">{{main.title}}</a></h1>
+
+        <h2>Добавление нового напитка ... <a href="#"><strong>{{main.curdrink.type}}</strong></a></h2>
+    </div>
+    <hr/>
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+<!-- end #logo -->
+<div id="page">
+    <div id="page-bgtop">
+        <div id="page-bgbtm">
+            <div id="content">
+
+                <div class="post">
+                    <h2 class="title"><a href="#">Параметры нового напитка</a></h2>
+
+                    <div class="entry">
+                        <h2>Название</h2>
+                        <input class="form-control" ng-model="main.curdrink.name">
+
+                        <h2>Цена в рублях</h2>
+                        <input class="form-control" ng-model="main.curdrink.price">
+
+                    </div>
+                    <!-- <div ><a href="#" class="links">Добавить</a></div> -->
+                </div>
+
+                <div class="post">
+
+                    <h2 class="title"><a href="#">Ингридиенты</a></h2>
+
+                    <div class="entry">
+                        <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor,
+                            elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec
+                            ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque
+                            ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis
+                            ac diam. Etiam non felis. Donec ut ante. In id eros.</p>
+                    </div>
+                    <div ng-click="main.addCurDrinkToDB()"><a href="#" class="links">Добавить</a></div>
+                </div>
+            </div>
+            <!-- end #content -->
+            <div id="sidebar">
+                <ul>
+                    <li>
+                        <h2>{{main.curdrink.type}}</h2>
+
+                        <div id="bg1">
+                            <div id="bg2">
+                                <p>{{main.curdrink.name}}</p>
+
+                                <div class="button">{{main.curdrink.name}}</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>Уже есть</h2>
+
+                        <div id="bg1">
+                            <div id="bg2">
+                                <ul ng-repeat="myitem in main.curlist">
+                                    <li><a href="#" ng-click="main.setCurentItem(myitem)">{{myitem.name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>Turpis nulla</h2>
+
+                        <div id="bg1">
+                            <div id="bg2">
+                                <ul>
+                                    <li><a href="#">Nec metus sed donec</a></li>
+                                    <li><a href="#">Magna lacus bibendum mauris</a></li>
+                                    <li><a href="#">Velit semper nisi molestie</a></li>
+                                    <li><a href="#">Eget tempor eget nonummy</a></li>
+                                    <li><a href="#">Nec metus sed donec</a></li>
+                                    <li><a href="#">Nec metus sed donec</a></li>
+                                    <li><a href="#">Magna lacus bibendum mauris</a></li>
+                                    <li><a href="#">Velit semper nisi molestie</a></li>
+                                    <li><a href="#">Eget tempor eget nonummy</a></li>
+                                    <li><a href="#">Nec metus sed donec</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- end #sidebar -->
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+        <!-- end #page -->
+    </div>
+</div>
+<div id="footer-bgcontent">
+    <div id="footer">
+        <p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+        </p>
+    </div>
+    <!-- end #footer -->
+</div>
+</body>
+</html>
