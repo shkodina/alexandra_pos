@@ -1,0 +1,14 @@
+{"type":"coffee","name":"Эспрессо","price":"250","ingredients":[],"_id":"FCV7JTUboaSGy9qa"}
+{"type":"juice","name":"Апельсиновый","price":"200","ingredients":[],"_id":"HxhFXVfeCsakwd0u"}
+{"type":"tea","name":"Малиновый","price":"75","ingredients":[],"_id":"Mv6NkNT8AojBA2Qm"}
+{"type":"juice","name":"Грейпфрут","price":"150","ingredients":[],"_id":"Pu0rRNl1oYhtwwN8"}
+{"type":"coffee","name":"Американо","price":"150","ingredients":[],"_id":"dCFAY49bXYjLgP0g"}
+{"type":"juice","name":"Грейпфрут (Большой)","price":"225","ingredients":[],"_id":"hZwWzw27jENSXUXs"}
+{"type":"tea","name":"С лимоном и корицей","price":"75","ingredients":[],"_id":"l4d4fO0PzFaTwJxk"}
+{"type":"tea","name":"Ромашковый","price":"50","ingredients":[],"_id":"ls3fnm9OX3nQQHID"}
+{"type":"coffee","name":"Капучино","price":"250","ingredients":[],"_id":"o6E7H3ae6GMmiivU"}
+{"type":"juice","name":"Морковный","price":"200","ingredients":[],"_id":"pReXKkBhWcTsyTuO"}
+{"type":"bubble","name":"Дыня Лайм","price":"160","ingredients":[],"_id":"FpcTCV55rGoBPvHP"}
+{"type":"sport","name":"Гейнер (Шоколад) big","price":"220","ingredients":[],"_id":"3ImSR2v2lpqPCSab"}
+{"type":"sport","name":"Гейнер (Шоколад) small","price":"150","ingredients":[],"_id":"OVWfY3VpufCPFJJe"}
+{"type":"sport","name":"Изолят (Шоколад) big","price":"225","ingredients":[],"_id":"4dDjttJbSXuh0NvT"}

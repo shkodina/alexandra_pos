@@ -3,7 +3,7 @@
  */
 
 var Datastore = require('nedb');
-var dbconf = require("./conf.json");
+var dbconf = require("./dbconf.json");
 
 var sales_manager = {
     checks : {}

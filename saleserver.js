@@ -2,21 +2,19 @@
  * Created by Alex on 05.03.2016.
  */
 
-var drink_manager = require("./mymodules/drink_manager");
-drink_manager.init();
+var db_manager = require("./mymodules/dbmanager.js");
+db_manager.init();
 
 
 
 var saleserver = {
-    addCoffee : function(coffee){
-        console.log("inserting coffee");
-        drink_manager.coffee.insert(coffee, function (err, newDoc) {});
+    addDrink : function(drink){
+        console.log("inserting drink");
+        db_manager.drinks.insert(drink, function (err, newDoc) {});
     }
-    ,updateCoffee : function(name , coffee){
-        drink_manager.coffee.insert({name : name}, coffee, {}, function (err, numReplaced) {});
-    }
-    ,getAllCoffee : function (sender){
-        drink_manager.coffee.find({}, function (err, docs) {
+    ,getAllDrinksByType : function (drink_type, sender){
+        console.log("asking all " + drink_type);
+        db_manager.drinks.find({type : drink_type}).sort({name : 1}).exec(function (err, docs) {
             sender(docs);
         });
     }

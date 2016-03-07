@@ -81,9 +81,10 @@
 
                         <div id="bg1">
                             <div id="bg2">
-                                <p>{{main.curdrink.name}}</p>
-
-                                <div class="button">{{main.curdrink.name}}</div>
+                                <ul>
+                                    <li>название: {{main.curdrink.name}}</li>
+                                    <li>цена: {{main.curdrink.price}}</li>
+                                </ul>
                             </div>
                         </div>
                     </li>
@@ -93,27 +94,7 @@
                         <div id="bg1">
                             <div id="bg2">
                                 <ul ng-repeat="myitem in main.curlist">
-                                    <li><a href="#" ng-click="main.setCurentItem(myitem)">{{myitem.name}}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <h2>Turpis nulla</h2>
-
-                        <div id="bg1">
-                            <div id="bg2">
-                                <ul>
-                                    <li><a href="#">Nec metus sed donec</a></li>
-                                    <li><a href="#">Magna lacus bibendum mauris</a></li>
-                                    <li><a href="#">Velit semper nisi molestie</a></li>
-                                    <li><a href="#">Eget tempor eget nonummy</a></li>
-                                    <li><a href="#">Nec metus sed donec</a></li>
-                                    <li><a href="#">Nec metus sed donec</a></li>
-                                    <li><a href="#">Magna lacus bibendum mauris</a></li>
-                                    <li><a href="#">Velit semper nisi molestie</a></li>
-                                    <li><a href="#">Eget tempor eget nonummy</a></li>
-                                    <li><a href="#">Nec metus sed donec</a></li>
+                                    <li ng-click="main.setCurentItem(myitem)">{{myitem.name}}</li>
                                 </ul>
                             </div>
                         </div>

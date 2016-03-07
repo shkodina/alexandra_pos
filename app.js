@@ -181,45 +181,19 @@ var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
     socket.on('updateMeFromDB', function (msg) {
-        console.log("web asked all data from db");
+        console.log("web asked " + msg.type + " data from db");
 
-        saleserver.getAllCoffee(function(docs){
-                socket.emit('setCoffeeListFromDB', docs);
-        }
+        saleserver.getAllDrinksByType(msg.type, function (docs) {
+                socket.emit('setListFromDB', docs);
+            }
         );
-
-
         console.log("web asked all data from db finished");
-
-        return;
-
-        socket.emit('setCoffeeListFromDB', 0);
-        socket.emit('setTeaListFromDB', 0);
-        socket.emit('setBubbleListFromDB', 0);
-        socket.emit('setJuiceListFromDB', 0);
-        socket.emit('setSportListFromDB', 0);
     });
 
     socket.on('addCurDrinkToDB', function (msg) {
-        switch (msg.type){
-            case "coffee":
-                console.log("ask add coffee");
-                saleserver.addCoffee(msg);
-                break;
-            case "tea":
-                return tealist;
-            case "bubble":
-                return bubblelist;
-            case "juice" :
-                return juicelist;
-            case "sport" :
-                return sportlist;
-            default :
-                return {};
-        }
-
+        console.log("ask add " + msg.type);
+        saleserver.addDrink(msg);
     });
-
 
 
     socket.on('addCoffee', function (msg) {
@@ -233,8 +207,6 @@ io.on('connection', function (socket) {
     socket.on('test', function (msg) {
         console.log("test from admin", msg);
     });
-
-
 
 
     socket.on('sayOK', function (msg) {
@@ -258,10 +230,9 @@ var fs = require('fs');
 setInterval(function () {
 
 
-
-    try{
+    try {
         ;
-    }catch (error){
+    } catch (error) {
         ;
     }
 

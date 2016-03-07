@@ -1,0 +1,5 @@
+{
+  "rootdir": "./dbdata/"
+  , "drinksdb" : "drinks.db"
+  , "checksdb" : "checks.db"
+}

@@ -7,36 +7,19 @@ angular.module('admindrinks', [
 
         var socket = io.connect();
 
-        var coffeelist = {};
-        var tealist = {};
-        var bubblelist = {};
-        var juicelist = {};
-        var sportlist = {};
+        var currentlist = {};
 
         socket.emit('updateMeFromDB',0);
 
-        socket.on('setCoffeeListFromDB', function(mes){
+        socket.on('setListFromDB', function(mes){
             console.log("setCoffeeListFromDB mes = ", mes);
 
             mes.forEach(function(item){
                 console.log ("coffee from list = ", item);
             })
 
-            coffeelist = mes;
+            currentlist = mes;
         });
-        socket.on('setTeaListFromDB', function(mes){
-            tealist = mes;
-        });
-        socket.on('setBubbleListFromDB', function(mes){
-            bubblelist = mes;
-        });
-        socket.on('setJuiceListFromDB', function(mes){
-            juicelist = mes;
-        });
-        socket.on('setSportListFromDB', function(mes){
-            sportlist = mes;
-        });
-
 
         return {
             getSocket: function () {
@@ -57,22 +40,6 @@ angular.module('admindrinks', [
                     , count :count
                 }
             }
-            , getDrinkList : function(drinktype){
-                switch (drinktype){
-                    case "coffee":
-                        return coffeelist;
-                    case "tea":
-                        return tealist;
-                    case "bubble":
-                        return bubblelist;
-                    case "juice" :
-                        return juicelist;
-                    case "sport" :
-                        return sportlist;
-                    default :
-                        return {};
-                }
-            }
         }
     })
     .controller('MainCtrl', function ($scope, $rootScope, valueService) {
@@ -80,15 +47,22 @@ angular.module('admindrinks', [
         main.title = 'Bubble Maker';
 
         main.curdrink = valueService.getDrink();
-        main.curlist = valueService.getDrinkList(main.curdrink.type);
+        main.curlist = {}
+
+        valueService.getSocket().on('setListFromDB', function(mes){
+            main.curlist = mes;
+            $scope.$apply();
+        });
 
         main.chooseDrinkType = function (drinktype) {
+            main.curdrink = valueService.getDrink();
             main.curdrink.type = drinktype;
-            main.curlist = valueService.getDrinkList(main.curdrink.type);
+            valueService.getSocket().emit('updateMeFromDB',{type : drinktype});
         };
 
         main.addCurDrinkToDB = function () {
             valueService.getSocket().emit('addCurDrinkToDB',main.curdrink);
+            valueService.getSocket().emit('updateMeFromDB',{type : main.curdrink.type});
         };
 
         main.setCurentItem = function(item){
