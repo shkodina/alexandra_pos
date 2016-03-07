@@ -192,16 +192,17 @@ io.on('connection', function (socket) {
 
     socket.on('addCurDrinkToDB', function (msg) {
         console.log("ask add " + msg.type);
+        console.log(msg);
         saleserver.addDrink(msg);
     });
 
+    socket.on('deleteCurDrinkFromDB', function (msg) {
+        console.log("ask delete " + msg.type + " " + msg.name);
+        console.log(msg);
+        saleserver.deleteDrink(msg);
+    });
 
-    socket.on('addCoffee', function (msg) {
-        saleserver.addCoffe(msg);
-    });
-    socket.on('updateCoffee', function (msg) {
-        saleserver.updateCoffee(msg);
-    });
+
 
 
     socket.on('test', function (msg) {

@@ -1,0 +1,36 @@
+<h3>Ингридиенты</h3>
+
+<ul class="form-panel" ng-repeat="ingr in main.curdrink.ingredients">
+    <li>{{ingr.name}} : {{ingr.count}} : {{ingr.mass}}</li>
+</ul>
+
+<label class="col-sm-2 col-sm-2 control-label">Название</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.ingridient.name">
+</div>
+
+<label class="col-sm-2 col-sm-2 control-label">Единицы (g/ml)</label>
+<div class="col-sm-10">
+    <select class="form-control" ng-model="main.ingridient.mass">
+        <option>g</option>
+        <option>ml</option>
+        <option>cup</option>
+        <option>pice</option>
+    </select>
+</div>
+
+
+<label class="col-sm-2 col-sm-2 control-label">Количество</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.ingridient.count">
+</div>
+
+
+<button type="button" class="btn btn-theme02" ng-click="main.addIngridientToDrink()">
+    <i class="fa fa-check"></i>
+    Добавить к напитку
+</button>
+
+
+
+

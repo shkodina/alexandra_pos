@@ -1,14 +1,13 @@
-{"type":"coffee","name":"Эспрессо","price":"250","ingredients":[],"_id":"FCV7JTUboaSGy9qa"}
-{"type":"juice","name":"Апельсиновый","price":"200","ingredients":[],"_id":"HxhFXVfeCsakwd0u"}
-{"type":"tea","name":"Малиновый","price":"75","ingredients":[],"_id":"Mv6NkNT8AojBA2Qm"}
-{"type":"juice","name":"Грейпфрут","price":"150","ingredients":[],"_id":"Pu0rRNl1oYhtwwN8"}
-{"type":"coffee","name":"Американо","price":"150","ingredients":[],"_id":"dCFAY49bXYjLgP0g"}
-{"type":"juice","name":"Грейпфрут (Большой)","price":"225","ingredients":[],"_id":"hZwWzw27jENSXUXs"}
-{"type":"tea","name":"С лимоном и корицей","price":"75","ingredients":[],"_id":"l4d4fO0PzFaTwJxk"}
-{"type":"tea","name":"Ромашковый","price":"50","ingredients":[],"_id":"ls3fnm9OX3nQQHID"}
-{"type":"coffee","name":"Капучино","price":"250","ingredients":[],"_id":"o6E7H3ae6GMmiivU"}
-{"type":"juice","name":"Морковный","price":"200","ingredients":[],"_id":"pReXKkBhWcTsyTuO"}
-{"type":"bubble","name":"Дыня Лайм","price":"160","ingredients":[],"_id":"FpcTCV55rGoBPvHP"}
-{"type":"sport","name":"Гейнер (Шоколад) big","price":"220","ingredients":[],"_id":"3ImSR2v2lpqPCSab"}
-{"type":"sport","name":"Гейнер (Шоколад) small","price":"150","ingredients":[],"_id":"OVWfY3VpufCPFJJe"}
-{"type":"sport","name":"Изолят (Шоколад) big","price":"225","ingredients":[],"_id":"4dDjttJbSXuh0NvT"}
+{"type":"juice","name":"Лимонный","price":"150","ingredients":[{"name":"лимон","mass":"штк","count":"3"}],"_id":"0A6WExMjETAanJbj"}
+{"type":"coffee","name":"Капучино","price":"150","ingredients":null,"_id":"RDxxl3XYatfauSiA"}
+{"type":"тип напитка","name":"Американо","price":"150","ingredients":null,"_id":"s2FeGjAb9iHhjFSQ"}
+{"type":"coffee","name":"Американо","price":"150","ingredients":null,"_id":"b5TufrICQwB7osoQ"}
+{"type":"coffee","name":"Эспрессо","price":"120","ingredients":null,"_id":"ZUk8A8p8j52tEk2R"}
+{"type":"coffee","name":"Эспрессо Двойной","price":"240","ingredients":null,"_id":"B8exdhOTu8BkNQaM"}
+{"type":"tea","name":"Черный чай (чайник)","price":"150","ingredients":null,"_id":"hjpNOp3XfupE5e5F"}
+{"type":"sport","name":"Гейнер (большой)","price":"180","ingredients":null,"_id":"srFdKOfcK0ZeumR3"}
+{"type":"juice","name":"Цитрусовый бум","price":"100","ingredients":[{"name":"лимон","mass":"pice","count":"1"},{"name":"апельсин","mass":"pice","count":"1"},{"name":"грейпфрут","mass":"pice","count":"1"}],"_id":"9zgWj4XoI35lpgMt"}
+{"$$deleted":true,"_id":"0A6WExMjETAanJbj"}
+{"type":"juice","name":"Лимонный","price":"150","ingredients":[{"name":"лимон","mass":"pice","count":"1"}],"_id":"9tLkfuPH7MbqLWHG"}
+{"type":"sport","name":"Гейненер (большой)","price":"180","ingredients":[{"name":"гейнер порошок","mass":"cup","count":"1"},{"name":"молоко","mass":"ml","count":"300"}],"_id":"fisXe095u7Sa36VA"}
+{"$$deleted":true,"_id":"srFdKOfcK0ZeumR3"}
