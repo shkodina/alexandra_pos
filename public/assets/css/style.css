@@ -7,7 +7,7 @@ Premium: http://www.gridgum.com
 */
 
 /* Import fonts */
-@import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import url(inport_css.css);
 
 /* BASIC THEME CONFIGURATION */
 body {
@@ -775,14 +775,25 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .ds h3 {
-	color: #ffffff;
-	font-size: 16px;
-	padding: 0 10px;
-	line-height: 60px;
-	height: 60px;
-	margin: 0;
-	background: #ff865c;
-	text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    margin: 0;
+    background: #ff5329;
+    text-align: center;
+}
+
+.ds #my2 {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    margin: 0;
+    background: #6d84ff;
+    text-align: center;
 }
 
 .ds i {
