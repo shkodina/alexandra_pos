@@ -1,13 +1,9 @@
-{"type":"juice","name":"Лимонный","price":"150","ingredients":[{"name":"лимон","mass":"штк","count":"3"}],"_id":"0A6WExMjETAanJbj"}
-{"type":"coffee","name":"Капучино","price":"150","ingredients":null,"_id":"RDxxl3XYatfauSiA"}
-{"type":"тип напитка","name":"Американо","price":"150","ingredients":null,"_id":"s2FeGjAb9iHhjFSQ"}
-{"type":"coffee","name":"Американо","price":"150","ingredients":null,"_id":"b5TufrICQwB7osoQ"}
-{"type":"coffee","name":"Эспрессо","price":"120","ingredients":null,"_id":"ZUk8A8p8j52tEk2R"}
-{"type":"coffee","name":"Эспрессо Двойной","price":"240","ingredients":null,"_id":"B8exdhOTu8BkNQaM"}
-{"type":"tea","name":"Черный чай (чайник)","price":"150","ingredients":null,"_id":"hjpNOp3XfupE5e5F"}
-{"type":"sport","name":"Гейнер (большой)","price":"180","ingredients":null,"_id":"srFdKOfcK0ZeumR3"}
-{"type":"juice","name":"Цитрусовый бум","price":"100","ingredients":[{"name":"лимон","mass":"pice","count":"1"},{"name":"апельсин","mass":"pice","count":"1"},{"name":"грейпфрут","mass":"pice","count":"1"}],"_id":"9zgWj4XoI35lpgMt"}
-{"$$deleted":true,"_id":"0A6WExMjETAanJbj"}
 {"type":"juice","name":"Лимонный","price":"150","ingredients":[{"name":"лимон","mass":"pice","count":"1"}],"_id":"9tLkfuPH7MbqLWHG"}
+{"type":"juice","name":"Цитрусовый бум","price":"100","ingredients":[{"name":"лимон","mass":"pice","count":"1"},{"name":"апельсин","mass":"pice","count":"1"},{"name":"грейпфрут","mass":"pice","count":"1"}],"_id":"9zgWj4XoI35lpgMt"}
+{"type":"coffee","name":"Эспрессо Двойной","price":"240","ingredients":null,"_id":"B8exdhOTu8BkNQaM"}
+{"type":"coffee","name":"Капучино","price":"150","ingredients":null,"_id":"RDxxl3XYatfauSiA"}
+{"type":"coffee","name":"Эспрессо","price":"120","ingredients":null,"_id":"ZUk8A8p8j52tEk2R"}
+{"type":"coffee","name":"Американо","price":"150","ingredients":null,"_id":"b5TufrICQwB7osoQ"}
 {"type":"sport","name":"Гейненер (большой)","price":"180","ingredients":[{"name":"гейнер порошок","mass":"cup","count":"1"},{"name":"молоко","mass":"ml","count":"300"}],"_id":"fisXe095u7Sa36VA"}
-{"$$deleted":true,"_id":"srFdKOfcK0ZeumR3"}
+{"type":"tea","name":"Черный чай (чайник)","price":"150","ingredients":null,"_id":"hjpNOp3XfupE5e5F"}
+{"type":"juice","name":"Грейпфрутовый","price":"120","ingredients":[{"name":"грейпфрут","mass":"pice","count":"3"}],"_id":"jix5hEi6g9yQgTNN"}

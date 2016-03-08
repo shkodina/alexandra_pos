@@ -1,0 +1,43 @@
+<!--COMPLETED ACTIONS DONUTS CHART-->
+<h3>Заказ</h3>
+
+<!-- First Action -->
+<div class="desc" >
+    <div class="details">
+        <table class="table">
+            <tbody>
+                <tr ng-repeat="drinkforsale in main.check.list" ng-click="main.removeDrinkFromCheck(drinkforsale)">
+                    <td>{{drinkforsale.drink.name}}</td>
+<!--
+                    <td><a href="#" >{{drinkforsale.name}}</a></td>
+-->
+                    <td>{{drinkforsale.drink.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="desc">
+    <div class="details">
+        <h4>Итого: {{ main.check.total}}</h4>
+    </div>
+</div>
+
+<div class="desc">
+    <div class="details">
+        <button type="button" class="btn btn-theme02" ng-click="main.applyCheck()">
+            <i class="fa fa-check"></i>
+            Оформить
+        </button>
+    </div>
+</div>
+
+<div class="desc">
+    <div class="details">
+        <button type="button" class="btn btn-theme04" ng-click="main.resetCheck()">
+            Отмена
+        </button>
+    </div>
+</div>

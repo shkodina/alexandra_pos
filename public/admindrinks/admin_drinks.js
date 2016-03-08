@@ -9,15 +9,7 @@ angular.module('admindrinks', [
 
         var currentlist = {};
 
-        socket.emit('updateMeFromDB', 0);
-
-        socket.on('setListFromDB', function (mes) {
-            console.log("setCoffeeListFromDB mes = ", mes);
-
-            mes.forEach(function (item) {
-                console.log ("coffee from list = ", item);
-            })
-
+        socket.on('setAdminListFromDB', function (mes) {
             currentlist = mes;
         });
 
@@ -58,18 +50,18 @@ angular.module('admindrinks', [
         main.chooseDrinkType = function (drinktype) {
             main.curdrink = valueService.getDrink();
             main.curdrink.type = drinktype;
-            valueService.getSocket().emit('updateMeFromDB', {type: drinktype});
+            valueService.getSocket().emit('updateAdminFromDB', {type: drinktype});
         };
 
         main.addCurDrinkToDB = function () {
             valueService.getSocket().emit('addCurDrinkToDB', main.curdrink);
-            valueService.getSocket().emit('updateMeFromDB', {type: main.curdrink.type});
+            valueService.getSocket().emit('updateAdminFromDB', {type: main.curdrink.type});
             main.curdrink = valueService.getDrink();
         };
 
         main.deleteCurDrinkFromDB = function(){
             valueService.getSocket().emit('deleteCurDrinkFromDB', main.curdrink);
-            valueService.getSocket().emit('updateMeFromDB', {type: main.curdrink.type});
+            valueService.getSocket().emit('updateAdminFromDB', {type: main.curdrink.type});
             main.curdrink = valueService.getDrink();
         };
 
@@ -104,9 +96,6 @@ angular.module('admindrinks', [
             }
         }
 
-        valueService.getSocket().on('printMeas', function (mes) {
-            $scope.$apply();
-        });
     })
     .directive('adddrink', function () {
         return {

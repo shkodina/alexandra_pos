@@ -1,0 +1,23 @@
+<!-- sidebar menu start-->
+<ul class="sidebar-menu" id="nav-accordion">
+
+    <p class="centered"><a href="#" ng-click="main.updateScope()">
+        <img src="../assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+    <h5 class="centered">Учёт</h5>
+
+
+    <li class="sub-menu" ng-repeat="drinktype in main.drinklists.types">
+        <a href="javascript:;" ng-click="main.drinkTypeSelected(drinktype)">
+            <i class="fa fa-th"></i>
+            <span>{{main.getItemReadableName(drinktype)}}</span>
+        </a>
+
+        <!-- узнать почему не работает подраздел -->
+
+        <ul class="sub">
+            <li><a href="general.html">1</a></li>
+            <li><a href="#">2</a></li>
+        </ul>
+    </li>
+</ul>
+<!-- sidebar menu end-->

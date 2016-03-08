@@ -180,44 +180,39 @@ var saleserver = require("./saleserver.js");
 var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-    socket.on('updateMeFromDB', function (msg) {
-        console.log("web asked " + msg.type + " data from db");
 
+    socket.on('updateAdminFromDB', function (msg) {
         saleserver.getAllDrinksByType(msg.type, function (docs) {
-                socket.emit('setListFromDB', docs);
+                socket.emit('setAdminListFromDB', docs);
             }
         );
-        console.log("web asked all data from db finished");
     });
 
     socket.on('addCurDrinkToDB', function (msg) {
-        console.log("ask add " + msg.type);
         console.log(msg);
         saleserver.addDrink(msg);
     });
 
     socket.on('deleteCurDrinkFromDB', function (msg) {
-        console.log("ask delete " + msg.type + " " + msg.name);
         console.log(msg);
         saleserver.deleteDrink(msg);
     });
 
+////////////////////////////////////////////////////////////////////////
 
+    socket.on('updateMainFromDB', function (msg) {
+        saleserver.getAllDrinksByType(null, function (docs) {
+                socket.emit('setMainDrinkListFromDB', docs);
+            }
+        );
+    });
 
-
-    socket.on('test', function (msg) {
-        console.log("test from admin", msg);
+    socket.on('addCheckToDB', function(mes){
+        saleserver.addCheckToDB(mes);
     });
 
 
-    socket.on('sayOK', function (msg) {
-        console.log("from sayOK start");
-        console.log(msg);
-        console.log("from sayOK stop");
-        io.emit('printMyData', {i: 10, t: 100});
-//        tools.buttons.add(msg.groupId, msg.button);
-//        io.emit('updateGroups', groups);
-    });
+
 
 });
 

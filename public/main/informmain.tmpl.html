@@ -1,0 +1,5 @@
+<ul>
+    <li ng-repeat="drink in main.drinklists[main.curdrinktype].list">
+        <button type="button" class="btn btn-theme03" ng-click="main.addToCheck(drink)">{{drink.name}}</button>
+    </li>
+</ul>

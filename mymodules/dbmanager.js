@@ -12,6 +12,8 @@ var db_manager = {
     , init : function (){
         this.drinks = new Datastore(dbconf.rootdir + dbconf.drinksdb);
         this.drinks.loadDatabase();
+        this.checks = new Datastore(dbconf.rootdir + dbconf.checksdb);
+        this.checks.loadDatabase();
     }
 }
 
