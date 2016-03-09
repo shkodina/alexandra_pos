@@ -1,0 +1,38 @@
+<h3>Ингридиент для Базы</h3>
+
+<label class="col-sm-2 col-sm-2 control-label">Название</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.ingridientnewfordb.name">
+</div>
+
+<label class="col-sm-2 col-sm-2 control-label">Единицы</label>
+<div class="col-sm-10">
+    <select class="form-control" ng-model="main.ingridientnewfordb.mass">
+        <option ng-repeat="ingmass in main.ingridientsmassfromdb">{{ingmass.name}}</option>
+    </select>
+</div>
+
+
+<label class="col-sm-2 col-sm-2 control-label">Количество</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.ingridientnewfordb.count">
+</div>
+
+<p>.</p>
+<button type="button" class="btn btn-theme02" ng-click="main.addNewIngngridientToDB()">
+    <i class="fa fa-check"></i>
+    Добавить / обновить
+</button>
+
+
+
+<button type="button" class="btn btn-theme04 pull-right" ng-click="main.cancelNewIngngridient()">
+    Отмена
+</button>
+<button type="button" class="btn btn-theme03 pull-right" ng-click="main.showAllIngridients()">
+    Показать все ингридиенты
+</button>
+
+
+
+

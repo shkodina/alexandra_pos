@@ -44,35 +44,7 @@
     TOP BAR CONTENT & NOTIFICATIONS
     *********************************************************************************************************************************************************** -->
     <!--header start-->
-    <header class="header black-bg">
-        <div class="sidebar-toggle-box">
-            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-        </div>
-        <!--logo start-->
-        <a href="#" class="logo"><b>{{main.title}}</b></a>
-        <!--logo end-->
-        <div class="nav notify-row" id="top_menu">
-            <!--  notification start -->
-            <ul class="nav top-menu">
-
-                <li >
-                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType(group)" ng-repeat="group in main.groups">{{group.name}}</button>
-                </li>
-
-            </ul>
-            <!--  notification end -->
-        </div>
-
-        <div class="top-menu">
-            <ul class="nav pull-right top-menu">
-                <li><a class="logout" href="#" ng-click="main.needNewGroup()">Добавить новую группу</a></li>
-            </ul>
-        </div>
-        <div class="top-menu">
-            <ul class="nav pull-right top-menu">
-                <li><a class="logout" href="#">Logout</a></li>
-            </ul>
-        </div>
+    <header topbarcontent class="header black-bg">
     </header>
     <!--header end-->
 
@@ -81,28 +53,7 @@
     *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
     <aside>
-        <div id="sidebar" class="nav-collapse ">
-            <!-- sidebar menu start-->
-            <ul class="sidebar-menu" id="nav-accordion">
-
-                <p class="centered">
-                    <a href="profile.html">
-                        <img src="../assets/img/ui-sam.jpg"
-                             class="img-circle"
-                             width="60">
-                    </a>
-                </p>
-                <h5 class="centered">Элементы группы</h5>
-
-
-                <li class="sub-menu" ng-repeat="myitem in main.curlist">
-                    <a href="javascript:;" ng-click="main.setCurentItem(myitem)">
-                        <i class="fa fa-tasks"></i>
-                        <span>{{myitem.name}}</span>
-                    </a>
-                </li>
-            </ul>
-            <!-- sidebar menu end-->
+        <div leftmainsidebarmenu id="sidebar" class="nav-collapse ">
         </div>
     </aside>
     <!--sidebar end-->
@@ -126,6 +77,12 @@
                     </div>
 
                    <div addgroupe class="form-panel" ng-if="main.newgroup">
+                    </div>
+
+                    <div addnewingridienttodb class="form-panel" ng-if="main.ingridientnewfordb">
+                    </div>
+
+                    <div allingridientstable class="form-panel" ng-if="main.showallingridients">
                     </div>
 
 

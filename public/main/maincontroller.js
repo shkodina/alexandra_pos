@@ -11,6 +11,8 @@ angular.module('maincontroller', [
 
 
         socket.emit('updateMainFromDB', 0);
+        socket.emit('getAllGroupsFromDB', 0);
+
 
         socket.on('setMainDrinkListFromDB', function (mes) {
             mes.forEach(function (item) {
@@ -55,6 +57,12 @@ angular.module('maincontroller', [
 
         valueService.getSocket().on('setListFromDB', function (mes) {
             main.curlist = mes;
+            $scope.$apply();
+        });
+
+        main.groups = {};
+        valueService.getSocket().on('setGroupsFromDB', function(mes){
+            main.groups = mes;
             $scope.$apply();
         });
 
@@ -104,19 +112,11 @@ angular.module('maincontroller', [
         };
 
         main.getItemReadableName = function (drinktype) {
-            switch (drinktype) {
-                case  "coffee" :
-                    return "Кофе";
-                case  "tea" :
-                    return "Чай";
-                case  "juice" :
-                    return "Сок";
-                case  "bubble" :
-                    return "Bubble Tea";
-                case  "sport" :
-                    return "Спортпит";
-                default:
-                    return "Неизвестные";
+            for (var gr in main.groups){
+                console.log('gr = ', main.groups[gr]);
+                if (main.groups[gr].type == drinktype){
+                    return main.groups[gr].name;
+                }
             }
         }
 

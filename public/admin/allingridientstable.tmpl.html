@@ -1,0 +1,32 @@
+<h3>Полный список ингридиентов на складе</h3>
+<table class="table table-striped table-advance table-hover">
+
+    <hr>
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Мера</th>
+        <th>Количество</th>
+        <th>Оценка</th>
+        <th></th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr ng-repeat="ingridient in main.ingridientsfromdb">
+        <td ng-click='main.setIngridientForDrink(ingridient)'>{{ingridient.name}}</td>
+        <td>{{ingridient.mass}}</td>
+        <td>{{ingridient.count}}</td>
+        <td>Достаточно</td>
+        <td>
+            <button class="btn btn-success btn-xs" ng-click='main.setIngridientForDrink(ingridient)'><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" ng-click='main.setIngridientForEdit(ingridient)'><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-xs" ng-click='main.setIngridientForDelete(ingridient)'><i class="fa fa-trash-o "></i></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-theme03" ng-click="main.hideAllIngridients()">
+    Спрятать все ингридиенты
+</button>

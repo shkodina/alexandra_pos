@@ -4,4 +4,5 @@
   , "checksdb" : "checks.db"
   , "groupsdb" : "groups.db"
   , "ingidientsdb" : "ingridients.db"
+  , "ingridientsmassdb" : "ingridientsmass.db"
 }

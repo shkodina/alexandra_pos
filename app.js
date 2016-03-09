@@ -28,8 +28,8 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-		extended : false
-	}));
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,9 +41,9 @@ app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -51,23 +51,23 @@ app.use(function (req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-	app.use(function (err, req, res, next) {
-		res.status(err.status || 500);
-		res.render('error', {
-			message : err.message,
-			error : err
-		});
-	});
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-	res.status(err.status || 500);
-	res.render('error', {
-		message : err.message,
-		error : {}
-	});
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 //***********************************************************
@@ -108,19 +108,19 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-	var port = parseInt(val, 10);
+    var port = parseInt(val, 10);
 
-	if (isNaN(port)) {
-		// named pipe
-		return val;
-	}
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
 
-	if (port >= 0) {
-		// port number
-		return port;
-	}
+    if (port >= 0) {
+        // port number
+        return port;
+    }
 
-	return false;
+    return false;
 }
 
 /**
@@ -128,27 +128,27 @@ function normalizePort(val) {
  */
 
 function onError(error) {
-	if (error.syscall !== 'listen') {
-		throw error;
-	}
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
 
-	var bind = typeof port === 'string'
-		 ? 'Pipe ' + port
-		 : 'Port ' + port;
+    var bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
 
-	// handle specific listen errors with friendly messages
-	switch (error.code) {
-	case 'EACCES':
-		console.error(bind + ' requires elevated privileges');
-		process.exit(1);
-		break;
-	case 'EADDRINUSE':
-		console.error(bind + ' is already in use');
-		process.exit(1);
-		break;
-	default:
-		throw error;
-	}
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
 }
 
 /**
@@ -156,11 +156,11 @@ function onError(error) {
  */
 
 function onListening() {
-	var addr = server.address();
-	var bind = typeof addr === 'string'
-		 ? 'pipe ' + addr
-		 : 'port ' + addr.port;
-	debug('Listening on ' + bind);
+    var addr = server.address();
+    var bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+    debug('Listening on ' + bind);
 }
 //***********************************************************
 //***********************************************************
@@ -182,50 +182,101 @@ var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
 
-	socket.on('updateAdminFromDB', function (msg) {
-		console.log('ask updateAdminFromDB with msg = ', msg);
-		saleserver.getAllDrinksByType(msg.type, function (docs) {
-			socket.emit('setAdminListFromDB', docs);
-		});
-	});
+    socket.on('updateAdminFromDB', function (msg) {
+        console.log('ask updateAdminFromDB with msg = ', msg);
+        saleserver.getAllDrinksByType(msg.type, function (docs) {
+            socket.emit('setAdminListFromDB', docs);
+        });
+    });
 
-	socket.on('addCurDrinkToDB', function (msg) {
-		console.log(msg);
-		saleserver.addDrink(msg);
-	});
 
-	socket.on('deleteCurDrinkFromDB', function (msg) {
-		console.log(msg);
-		saleserver.deleteDrink(msg);
-	});
 
-	socket.on('addNewGroupToDB', function (msg) {
-		console.log(msg);
-		saleserver.addNewGroup(msg);
-	});
-	
-	socket.on('getAllGroupsFromDB', function (msg) {
-		console.log("ask all groups from db");
-		console.log(msg);
-		saleserver.getAllGroups(function (docs) {
-			socket.emit('setGroupsFromDB', docs);
-		});
-	});
-	
-	////////////////////////////////////////////////////////////////////////
 
-	socket.on('updateMainFromDB', function (msg) {
-		saleserver.getAllDrinksByType(null, function (docs) {
-			socket.emit('setMainDrinkListFromDB', docs);
-		});
-	});
 
-	socket.on('addCheckToDB', function (mes) {
-		saleserver.addCheckToDB(mes);
-	});
 
-	
-	
+    socket.on('addCurDrinkToDB', function (msg) {
+        console.log(msg);
+        saleserver.addDrink(msg);
+    });
+
+    socket.on('deleteCurDrinkFromDB', function (msg) {
+        console.log(msg);
+        saleserver.deleteDrink(msg);
+    });
+
+
+
+
+
+
+    socket.on('addNewGroupToDB', function (msg) {
+        console.log(msg);
+        saleserver.addNewGroup(msg);
+    });
+
+    socket.on('getAllGroupsFromDB', function (msg) {
+        console.log("ask all groups from db");
+        console.log(msg);
+        saleserver.getAllGroups(function (docs) {
+            socket.emit('setGroupsFromDB', docs);
+        });
+    });
+
+
+
+
+
+
+    socket.on('getAllIngridientsFromDB', function(mes){
+        console.log("ask getAllIngridientsFromDB");
+        console.log(mes);
+        saleserver.getAllIngridients(function (docs) {
+            socket.emit('setAllIngridientsFromDB', docs);
+        });
+    });
+
+    socket.on('getAllIngridientsMassFromDB', function(mes){
+        console.log("ask getAllIngridientsFromDB");
+        console.log(mes);
+        saleserver.getAllIngridientsMass(function (docs) {
+            socket.emit('setAllIngridientsMassFromDB', docs);
+        });
+    });
+
+
+    socket.on('addIngridientToDB', function (mes){
+        console.log('ask add new ing to DB');
+        console.log(mes);
+        saleserver.addIngridient(mes);
+    });
+
+    socket.on('deleteIngridientFromDB', function(mes){
+        console.log('ask delete ingridient in DB');
+        console.log(mes);
+        saleserver.deleteIngridient(mes);
+    });
+
+    socket.on('updateIngridientInDB', function(mes){
+        console.log('ask update ingridient in DB');
+        console.log(mes);
+        saleserver.updateIngridient(mes);
+    });
+
+    ////////////////////////////////////////////////////////////////////////
+
+    socket.on('updateMainFromDB', function (msg) {
+        saleserver.getAllDrinksByType(null, function (docs) {
+            socket.emit('setMainDrinkListFromDB', docs);
+        });
+
+
+    });
+
+    socket.on('addCheckToDB', function (mes) {
+        saleserver.addCheckToDB(mes);
+    });
+
+
 });
 
 ///////////////////////////////////////
@@ -237,10 +288,24 @@ var fs = require('fs');
 
 setInterval(function () {
 
-	try { ;
-	} catch (error) { ;
-	}
+    try {
+        ;
+    } catch (error) {
+        ;
+    }
 
 }, 1000);
 
 module.exports = app;
+
+
+
+///////////////////////////////
+///////////////////////////////
+
+/*
+saleserver.addIngridientMass({type : 'g', name : 'г'});
+saleserver.addIngridientMass({type : 'ml', name : 'мл'});
+saleserver.addIngridientMass({type : 'pice', name : 'штк'});
+*/
+

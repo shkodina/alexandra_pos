@@ -7,14 +7,9 @@ angular.module('admindrinks', [
 
         var socket = io.connect();
 
-        var currentlist = {};
-
-        socket.on('setAdminListFromDB', function (mes) {
-            currentlist = mes;
-        });
-
         socket.emit('getAllGroupsFromDB', 0);
-
+        socket.emit('getAllIngridientsFromDB', 0);
+        socket.emit('getAllIngridientsMassFromDB', 0);
 
         return {
             getSocket: function () {
@@ -36,25 +31,43 @@ angular.module('admindrinks', [
             }
             , getIngridient: function () {
                 return {
-                    name: "название ингридиента"
-                    , mass: "g"
-                    , count: "10"
+                    name: null
+                    , mass: 'g'
+                    , type : {}
+                    , count: "1000"
                 }
             }
         }
     })
+
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    //
+    //     C O N T R O L L E R       M A I N
+    //
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+
     .controller('MainCtrl', function ($scope, $rootScope, valueService) {
         var main = this;
         main.title = 'Bubble Maker';
 
+
+
+
+
+
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        //
+        //     D R I N K S
+        //
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+
         main.curdrink = valueService.getDrink();
         main.curlist = {};
-        main.ingridient = valueService.getIngridient();
-
-        main.groups = {};
-        main.curgroup = null;
-        main.newgroup = null;
-
 
         valueService.getSocket().on('setAdminListFromDB', function (mes) {
             console.log("get drinks list from db");
@@ -62,17 +75,6 @@ angular.module('admindrinks', [
                 console.log('group = ', item);
             })
             main.curlist = mes;
-            $scope.$apply();
-        });
-
-        valueService.getSocket().on('setGroupsFromDB', function(mes){
-            console.log("get groups from db");
-            console.log(mes);
-            main.groups = mes;
-
-            mes.forEach(function(item){
-                console.log('group = ', item);
-            })
             $scope.$apply();
         });
 
@@ -106,11 +108,36 @@ angular.module('admindrinks', [
             main.curdrink = item;
         };
 
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        //
+        //     I N G R I D I E N T    F O R   D R I N K S
+        //
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
 
+        main.ingridient = valueService.getIngridient();
+        main.ingridientsfromdb = {};
+        main.ingridientsmassfromdb = {};
 
+        valueService.getSocket().on('setAllIngridientsFromDB', function(mes){
+            console.log("get ingridients from DB");
+            console.log(mes);
+
+            main.ingridientsfromdb = mes;
+            $scope.$apply();
+        });
+
+        valueService.getSocket().on('setAllIngridientsMassFromDB', function(mes){
+            console.log("get ingridients mass from DB");
+            console.log(mes);
+
+            main.ingridientsmassfromdb = mes;
+        });
 
         main.useIngridients = function () {
             main.curdrink.ingredients = [];
+            main.showAllIngridients();
         };
 
         main.addIngridientToDrink = function () {
@@ -118,16 +145,43 @@ angular.module('admindrinks', [
             main.ingridient = valueService.getIngridient();
         };
 
+        main.setIngridientForDrink = function(ingrfromdb){
+            main.ingridient = ingrfromdb;
+        };
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        //
+        //      N E W   G R O U P     F O R   D B
+        //
+        //      G R O U P S
+        //
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+
+        main.groups = {};
+        main.curgroup = null;
+        main.newgroup = null;
 
 
+        valueService.getSocket().on('setGroupsFromDB', function(mes){
+            console.log("get groups from db");
+            console.log(mes);
+            main.groups = mes;
+
+            mes.forEach(function(item){
+                console.log('group = ', item);
+            })
+            $scope.$apply();
+        });
 
         main.needNewGroup = function(){
             main.newgroup = valueService.getNewGroup();
         };
 
         main.addGroupToDB = function(){
-            valueService.getSocket().emit('addNewGroupToDB', main.newgroup);
-            main.newgroup = null;
+            valueService.getSocket().emit('addNewGroupToDB', main.ingridientnewfordb);
+            main.ingridientnewfordb = null;
             valueService.getSocket().emit('getAllGroupsFromDB', 0);
         };
 
@@ -136,11 +190,75 @@ angular.module('admindrinks', [
         };
 
 
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        //
+        //      N E W   I N G R I D I E N T    F O R   D B
+        //
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+
+        main.ingridientnewfordb = null;
+        main.showallingridients = null;
+
+        main.needNewIngngridientForDB = function(){
+            main.ingridientnewfordb = valueService.getIngridient();
+        }
+
+        main.addNewIngngridientToDB = function(){
+
+            if("_id" in main.ingridientnewfordb) {
+                alert("try update ingridient");
+                valueService.getSocket().emit('updateIngridientInDB', main.ingridientnewfordb);
+                main.ingridientnewfordb = null;
+                valueService.getSocket().emit('getAllIngridientsFromDB', 0);
+                return ;
+            }
+
+            for (var i in main.ingridientsmassfromdb) {
+                console.log
+                if (main.ingridientsmassfromdb[i].name == main.ingridientnewfordb.mass){
+                    main.ingridientnewfordb.type = main.ingridientsmassfromdb[i].type;
+                }
+            }
+            valueService.getSocket().emit('addIngridientToDB', main.ingridientnewfordb);
+            main.ingridientnewfordb = null;
+            valueService.getSocket().emit('getAllIngridientsFromDB', 0);
+        };
+
+        main.cancelNewIngngridient = function(){
+            main.ingridientnewfordb = null;
+        };
+
+        main.setIngridientForEdit = function(ingr){
+            main.ingridientnewfordb = ingr;
+        };
+
+        main.setIngridientForDelete = function(ingr){
+            alert("try delete ingridient " + ingr.name);
+            valueService.getSocket().emit('deleteIngridientFromDB', ingr);
+            main.ingridientnewfordb = null;
+            valueService.getSocket().emit('getAllIngridientsFromDB', 0);
+        };
 
 
 
-
+        main.showAllIngridients = function(){
+            main.showallingridients = {};
+        };
+         main.hideAllIngridients = function(){
+            main.showallingridients = null;
+        };
     })
+
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    //
+    //      D I R I C T I V E S
+    //
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+
     .directive('adddrink', function () {
         return {
             templateUrl: 'adddrink.tmpl.html'
@@ -159,6 +277,26 @@ angular.module('admindrinks', [
     .directive('addgroupe', function () {
         return {
             templateUrl: 'addgroupe.tmpl.html'
+        }
+    })
+    .directive('addnewingridienttodb', function () {
+        return {
+            templateUrl: 'addnewingridienttodb.tmpl.html'
+        }
+    })
+    .directive('topbarcontent', function () {
+        return {
+            templateUrl: 'topbarcontent.tmpl.html'
+        }
+    })
+    .directive('leftmainsidebarmenu', function () {
+        return {
+            templateUrl: 'leftmainsidebarmenu.tmpl.html'
+        }
+    })
+    .directive('allingridientstable', function () {
+        return {
+            templateUrl: 'allingridientstable.tmpl.html'
         }
     })
 
