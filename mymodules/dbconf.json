@@ -2,4 +2,6 @@
   "rootdir": "./dbdata/"
   , "drinksdb" : "drinks.db"
   , "checksdb" : "checks.db"
+  , "groupsdb" : "groups.db"
+  , "ingidientsdb" "ingridients.db"
 }

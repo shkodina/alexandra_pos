@@ -14,6 +14,10 @@ var db_manager = {
         this.drinks.loadDatabase();
         this.checks = new Datastore(dbconf.rootdir + dbconf.checksdb);
         this.checks.loadDatabase();
+        this.groups = new Datastore(dbconf.rootdir + dbconf.groupsdb);
+        this.groups.loadDatabase();
+        this.ingidients = new Datastore(dbconf.rootdir + dbconf.ingidientsdb);
+        this.ingidients.loadDatabase();
     }
 }
 
