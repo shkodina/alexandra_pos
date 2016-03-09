@@ -1,6 +1,7 @@
 {"type":"get_manual","money":{"date":"2016-03-09T22:43:19.182Z","timestamp":1457563399182,"count":"100"},"_id":"3ZtRb7o8RoIDtaTw"}
-{"type":"add_manual","money":{"date":"2016-03-09T22:42:16.546Z","timestamp":1457563336546,"count":"555"},"_id":"rCHwcOaeGYRehvWs"}
-{"type":"add_by_check","money":180,"_id":"cDdC3LhXsNxHshaG"}
-{"type":"add_manual","money":{"date":"2016-03-09T23:02:32.376Z","timestamp":1457564552376,"count":"50"},"_id":"7M9fQL4aGlFr5gTQ"}
 {"type":"add_by_check","money":150,"_id":"6xxhhw9tOYbMEdKF"}
+{"type":"add_manual","money":{"date":"2016-03-09T23:02:32.376Z","timestamp":1457564552376,"count":"50"},"_id":"7M9fQL4aGlFr5gTQ"}
+{"type":"add_by_check","money":180,"_id":"cDdC3LhXsNxHshaG"}
+{"type":"add_manual","money":{"date":"2016-03-09T22:42:16.546Z","timestamp":1457563336546,"count":"555"},"_id":"rCHwcOaeGYRehvWs"}
 {"type":"get_manual","money":{"date":"2016-03-09T23:03:18.255Z","timestamp":1457564598255,"count":"800"},"_id":"yQ0sodeYcwLNa1BP"}
+{"type":"add_by_check","money":{"date":"2016-03-09T23:08:48.453Z","timestamp":1457564928453,"count":540},"_id":"LBTLZHAeUt8g7Rat"}

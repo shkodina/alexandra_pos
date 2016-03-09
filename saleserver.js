@@ -217,7 +217,13 @@ var saleserver = {
         })
     }
     , updateKassaByCheck : function(check){
-        db_manager.kassaoper.insert({type: "add_by_check", money : check.total}, function(err, newDoc){
+        var money = {
+            date : check.date
+            , timestamp : check.timestamp
+            , count :  check.total
+        };
+
+        db_manager.kassaoper.insert({type: "add_by_check", money : money}, function(err, newDoc){
             if (err != null) {
                 console.log("error = ", err);
             }
