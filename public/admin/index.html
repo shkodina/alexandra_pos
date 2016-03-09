@@ -55,17 +55,18 @@
             <!--  notification start -->
             <ul class="nav top-menu">
 
-                <li>
-                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType('coffee')">КОФЕ</button>
-                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType('tea')">ЧАЙ</button>
-                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType('juice')">СОК</button>
-                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType('bubble')">BUBBLE</button>
-                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType('sport')">СПОРТПИТ
-                    </button>
+                <li >
+                    <button type="button" class="btn btn-info" ng-click="main.chooseDrinkType(group)" ng-repeat="group in main.groups">{{group.name}}</button>
                 </li>
 
             </ul>
             <!--  notification end -->
+        </div>
+
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="#" ng-click="main.needNewGroup()">Добавить новую группу</a></li>
+            </ul>
         </div>
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
@@ -91,7 +92,7 @@
                              width="60">
                     </a>
                 </p>
-                <h5 class="centered">НАПИТКИ</h5>
+                <h5 class="centered">Элементы группы</h5>
 
 
                 <li class="sub-menu" ng-repeat="myitem in main.curlist">
@@ -123,6 +124,11 @@
 
                     <div addingridient class="form-panel" ng-if="main.curdrink.ingredients">
                     </div>
+
+                   <div addgroupe class="form-panel" ng-if="main.newgroup">
+                    </div>
+
+
 
 
                 </div>

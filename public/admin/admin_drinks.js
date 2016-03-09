@@ -13,6 +13,9 @@ angular.module('admindrinks', [
             currentlist = mes;
         });
 
+        socket.emit('getAllGroupsFromDB', 0);
+
+
         return {
             getSocket: function () {
                 return socket;
@@ -23,6 +26,12 @@ angular.module('admindrinks', [
                     , name: "название напитка"
                     , price: "100"
                     , ingredients: null
+                }
+            }
+              , getNewGroup: function () {
+                return {
+                    type: "newgroup"
+                    , name: "Новая группа"
                 }
             }
             , getIngridient: function () {
@@ -42,32 +51,63 @@ angular.module('admindrinks', [
         main.curlist = {};
         main.ingridient = valueService.getIngridient();
 
-        valueService.getSocket().on('setListFromDB', function (mes) {
+        main.groups = {};
+        main.curgroup = null;
+        main.newgroup = null;
+
+
+        valueService.getSocket().on('setAdminListFromDB', function (mes) {
+            console.log("get drinks list from db");
+            mes.forEach(function(item){
+                console.log('group = ', item);
+            })
             main.curlist = mes;
             $scope.$apply();
         });
 
-        main.chooseDrinkType = function (drinktype) {
+        valueService.getSocket().on('setGroupsFromDB', function(mes){
+            console.log("get groups from db");
+            console.log(mes);
+            main.groups = mes;
+
+            mes.forEach(function(item){
+                console.log('group = ', item);
+            })
+            $scope.$apply();
+        });
+
+        main.chooseDrinkType = function (group) {
+            main.curgroup = group;
             main.curdrink = valueService.getDrink();
-            main.curdrink.type = drinktype;
-            valueService.getSocket().emit('updateAdminFromDB', {type: drinktype});
+            main.curdrink.type = main.curgroup.type;
+            valueService.getSocket().emit('updateAdminFromDB', {type: main.curgroup.type});
         };
 
         main.addCurDrinkToDB = function () {
+            if (main.curgroup == null){
+                alert("Выбери группу, куда добавить");
+                return;
+            }
             valueService.getSocket().emit('addCurDrinkToDB', main.curdrink);
             valueService.getSocket().emit('updateAdminFromDB', {type: main.curdrink.type});
+
             main.curdrink = valueService.getDrink();
+            main.curdrink.type = main.curgroup.type;
         };
 
         main.deleteCurDrinkFromDB = function(){
             valueService.getSocket().emit('deleteCurDrinkFromDB', main.curdrink);
             valueService.getSocket().emit('updateAdminFromDB', {type: main.curdrink.type});
             main.curdrink = valueService.getDrink();
+            main.curdrink.type = main.curgroup.type;
         };
 
         main.setCurentItem = function (item) {
             main.curdrink = item;
         };
+
+
+
 
         main.useIngridients = function () {
             main.curdrink.ingredients = [];
@@ -79,22 +119,26 @@ angular.module('admindrinks', [
         };
 
 
-        main.getItemReadableName = function(){
-            switch (main.curdrink.type){
-                case  "coffee" :
-                    return " кофейный напиток";
-                case  "tea" :
-                    return " чайный напиток";
-                case  "juice" :
-                    return " сок или фруктовый напиток";
-                case  "bubble" :
-                    return " коктейль Bubble Tea !!!";
-                case  "sport" :
-                    return " спортпит напиток";
-                default:
-                    return " неизвестный напиток ???";
-            }
-        }
+
+
+        main.needNewGroup = function(){
+            main.newgroup = valueService.getNewGroup();
+        };
+
+        main.addGroupToDB = function(){
+            valueService.getSocket().emit('addNewGroupToDB', main.newgroup);
+            main.newgroup = null;
+            valueService.getSocket().emit('getAllGroupsFromDB', 0);
+        };
+
+        main.cancelNewGroup = function(){
+            main.newgroup = null;
+        };
+
+
+
+
+
 
     })
     .directive('adddrink', function () {
@@ -112,4 +156,10 @@ angular.module('admindrinks', [
             templateUrl: 'inform.tmpl.html'
         }
     })
+    .directive('addgroupe', function () {
+        return {
+            templateUrl: 'addgroupe.tmpl.html'
+        }
+    })
+
 ;

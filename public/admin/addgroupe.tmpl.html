@@ -1,0 +1,26 @@
+<h3>Новая группа</h3>
+
+
+<label class="col-sm-2 col-sm-2 control-label">Название</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.newgroup.name">
+</div>
+<label class="col-sm-2 col-sm-2 control-label">Ключ (coffee)</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.newgroup.type">
+</div>
+
+<p>.</p>
+
+<button type="button" class="btn btn-theme02" ng-click="main.addGroupToDB()">
+    <i class="fa fa-check"></i>
+    Добавить группу
+</button>
+<button type="button" class="btn btn-theme04 pull-right" ng-click="main.cancelNewGroup()">
+    Отмена
+</button>
+
+
+
+
+

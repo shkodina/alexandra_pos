@@ -183,6 +183,7 @@ var io = require('socket.io')(server);
 io.on('connection', function (socket) {
 
 	socket.on('updateAdminFromDB', function (msg) {
+		console.log('ask updateAdminFromDB with msg = ', msg);
 		saleserver.getAllDrinksByType(msg.type, function (docs) {
 			socket.emit('setAdminListFromDB', docs);
 		});
@@ -204,6 +205,7 @@ io.on('connection', function (socket) {
 	});
 	
 	socket.on('getAllGroupsFromDB', function (msg) {
+		console.log("ask all groups from db");
 		console.log(msg);
 		saleserver.getAllGroups(function (docs) {
 			socket.emit('setGroupsFromDB', docs);

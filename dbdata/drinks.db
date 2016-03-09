@@ -7,3 +7,12 @@
 {"type":"sport","name":"Гейненер (большой)","price":"180","ingredients":[{"name":"гейнер порошок","mass":"cup","count":"1"},{"name":"молоко","mass":"ml","count":"300"}],"_id":"fisXe095u7Sa36VA"}
 {"type":"tea","name":"Черный чай (чайник)","price":"150","ingredients":null,"_id":"hjpNOp3XfupE5e5F"}
 {"type":"juice","name":"Грейпфрутовый","price":"120","ingredients":[{"name":"грейпфрут","mass":"pice","count":"3"}],"_id":"jix5hEi6g9yQgTNN"}
+{"$$deleted":true,"_id":"B8exdhOTu8BkNQaM"}
+{"type":"тип напитка","name":"Эспрессо двойной","price":"250","ingredients":null,"_id":"rioDSbTcFydPAAjb"}
+{"type":"coffee","name":"Эспрессо Двойной","price":"250","ingredients":null,"_id":"bj15HetGF5K8kDq5"}
+{"$$deleted":true,"_id":"rioDSbTcFydPAAjb"}
+{"type":"coffee","name":"Классический","price":"80","ingredients":null,"_id":"8JiACOrvZsBNjkD0"}
+{"$$deleted":true,"_id":"8JiACOrvZsBNjkD0"}
+{"type":"coffee","name":"Классический","price":"80","ingredients":null,"_id":"wnKSneC7X51lk5Sg"}
+{"type":"coffee","name":"С молоком","price":"100","ingredients":null,"_id":"KCKwqtLzh4Lhzil1"}
+{"type":"tea","name":"Молочный Улун","price":"180","ingredients":null,"_id":"xWUEUa694yww4TzN"}
