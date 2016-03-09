@@ -71,8 +71,45 @@ var saleserver = {
                 console.log("error = ", err);
             }
         });
-    },
-    getAllGroups: function (sender) {
+    }
+    , updateIngridientsByCheck  : function(check){
+        console.log("updateIngridientsByCheck");
+
+        var inglist = [];
+        for (var i in check.list){
+            if (check.list[i].drink.ingredients != null){
+                for (var i2 in check.list[i].drink.ingredients){
+                    var ing = {};
+                    ing._id =  check.list[i].drink.ingredients[i2]._id;
+                    ing.count = check.list[i].drink.ingredients[i2].count;
+                    inglist.push(ing);
+                }
+            }
+        }
+
+        inglist.forEach(function(item){
+            console.log("ITEM");
+            console.log(item);
+            db_manager.ingridients.find({_id : item._id},function(err, docs){
+                if (err != null){
+                    console.error(err);
+                    return;
+                }
+
+                var newcount = +(docs[0].count) - +(item.count);
+                
+                db_manager.ingridients.update({_id : docs[0]._id}, {$set : {count : newcount}}, {}, function (err, numReplaced) {
+                    if (err != null) {
+                        console.log("error = ", err);
+                    }
+
+                });
+            });
+
+
+        });
+    }
+    , getAllGroups: function (sender) {
 
         db_manager.groups.find({}).sort({
             type: 1

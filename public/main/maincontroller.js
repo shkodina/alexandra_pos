@@ -118,7 +118,6 @@ angular.module('maincontroller', [
 
         main.getItemReadableName = function (drinktype) {
             for (var gr in main.groups){
-                console.log('gr = ', main.groups[gr]);
                 if (main.groups[gr].type == drinktype){
                     return main.groups[gr].name;
                 }
