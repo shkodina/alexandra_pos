@@ -180,7 +180,7 @@ angular.module('admindrinks', [
         };
 
         main.addGroupToDB = function(){
-            valueService.getSocket().emit('addNewGroupToDB', main.ingridientnewfordb);
+            valueService.getSocket().emit('addNewGroupToDB', main.newgroup);
             main.ingridientnewfordb = null;
             valueService.getSocket().emit('getAllGroupsFromDB', 0);
         };

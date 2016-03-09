@@ -1,18 +1,4 @@
-{"type":"juice","name":"Лимонный","price":"150","ingredients":[{"name":"лимон","mass":"pice","count":"1"}],"_id":"9tLkfuPH7MbqLWHG"}
-{"type":"juice","name":"Цитрусовый бум","price":"100","ingredients":[{"name":"лимон","mass":"pice","count":"1"},{"name":"апельсин","mass":"pice","count":"1"},{"name":"грейпфрут","mass":"pice","count":"1"}],"_id":"9zgWj4XoI35lpgMt"}
-{"type":"coffee","name":"С молоком","price":"100","ingredients":null,"_id":"KCKwqtLzh4Lhzil1"}
-{"type":"coffee","name":"Капучино","price":"150","ingredients":null,"_id":"RDxxl3XYatfauSiA"}
-{"type":"coffee","name":"Эспрессо","price":"120","ingredients":null,"_id":"ZUk8A8p8j52tEk2R"}
-{"type":"coffee","name":"Американо","price":"150","ingredients":null,"_id":"b5TufrICQwB7osoQ"}
-{"type":"coffee","name":"Эспрессо Двойной","price":"250","ingredients":null,"_id":"bj15HetGF5K8kDq5"}
-{"type":"sport","name":"Гейненер (большой)","price":"180","ingredients":[{"name":"гейнер порошок","mass":"cup","count":"1"},{"name":"молоко","mass":"ml","count":"300"}],"_id":"fisXe095u7Sa36VA"}
-{"type":"tea","name":"Черный чай (чайник)","price":"150","ingredients":null,"_id":"hjpNOp3XfupE5e5F"}
-{"type":"juice","name":"Грейпфрутовый","price":"120","ingredients":[{"name":"грейпфрут","mass":"pice","count":"3"}],"_id":"jix5hEi6g9yQgTNN"}
-{"type":"coffee","name":"Классический","price":"80","ingredients":null,"_id":"wnKSneC7X51lk5Sg"}
-{"type":"tea","name":"Молочный Улун","price":"180","ingredients":null,"_id":"xWUEUa694yww4TzN"}
-{"$$deleted":true,"_id":"9zgWj4XoI35lpgMt"}
-{"$$deleted":true,"_id":"9tLkfuPH7MbqLWHG"}
-{"$$deleted":true,"_id":"jix5hEi6g9yQgTNN"}
-{"type":"juice","name":"Лимонный","price":"120","ingredients":[{"name":"Лимоны","mass":"штк","type":"pice","count":"2","_id":"zKZvkRgf9uy0jxwx"}],"_id":"J5tYJRE8WxJY3Iw2"}
-{"type":"juice","name":"Грейпфрутовый","price":"100","ingredients":[{"name":"Грейпфруты","mass":"штк","type":"pice","count":"2","_id":"5DYwp0ZfKF9Sx8bJ"}],"_id":"GK86QIG8mj5ov7hC"}
-{"type":"juice","name":"Морковный","price":"100","ingredients":[{"name":"Морковь","mass":"г","type":"g","count":"300","_id":"6m2KYgPYp5kTXJb1"}],"_id":"XWyobh0QCvYZU819"}
+{"type":"juice","name":"Цитрусовый бум","price":"180","ingredients":[{"name":"Грейпфруты","mass":"штк","type":"pice","count":"1","_id":"Ju5dIOy3s7yzCHT5"},{"name":"Лимоны","mass":"штк","type":"pice","count":"1","_id":"bWrnZOOHCXYZN02X"},{"name":"Апельсины","mass":"штк","type":"pice","count":"1","_id":"MvAli9WYjoZdxQG5"},{"name":"Сахар","mass":"г","type":"g","count":"50","_id":"0ZfAzQ12gVBT5Hem"}],"_id":"0ik8ZCaC7g5zeagt"}
+{"type":"coffee","name":"Эспрессо","price":"150","ingredients":[{"name":"Кофе","mass":"г","type":"g","count":"20","_id":"hCfGBjlxfWVWbf9n"}],"_id":"bSwr0meg6p4qOLLJ"}
+{"type":"tea","name":"Черный сладкий","price":"80","ingredients":[{"name":"Заварка черная","mass":"г","type":"g","count":"5","_id":"fbSqFZgtzEsEHJ6Y"},{"name":"Сахар","mass":"г","type":"g","count":"10","_id":"0ZfAzQ12gVBT5Hem"}],"_id":"Vg8iKvNjhb8o1Apg"}
+{"type":"juice","name":"Апельсиновый фреш","price":"120","ingredients":[{"name":"Апельсины","mass":"штк","type":"pice","count":"3","_id":"MvAli9WYjoZdxQG5"}],"_id":"aJDZid9EcuZlBtFl"}

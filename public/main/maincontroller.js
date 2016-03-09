@@ -5,6 +5,8 @@ angular.module('maincontroller', [
     ])
     .factory('valueService', function ($rootScope, $location) {
 
+
+
         var socket = io.connect();
 
         var drinklists = {types : []};
@@ -98,6 +100,9 @@ angular.module('maincontroller', [
         };
 
         main.applyCheck = function(){
+            main.check.date = new Date();
+            main.check.timestamp = main.check.date.getTime();
+
             valueService.getSocket().emit('addCheckToDB', main.check);
 
             console.log("sending check");

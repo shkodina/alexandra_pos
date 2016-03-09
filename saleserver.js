@@ -54,8 +54,13 @@ var saleserver = {
         console.log(mes);
 
         mes.list.forEach(function (item) {
-            delete item['$$hashKey'];
-            delete item.drink['$$hashKey'];
+            if ('$$hashKey' in item){
+                delete item['$$hashKey'];
+            }
+
+            if ('$$hashKey' in item.drink){
+                delete item.drink['$$hashKey'];
+            }
         });
 
         console.log("after clearing");

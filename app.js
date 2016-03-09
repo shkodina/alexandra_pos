@@ -274,6 +274,7 @@ io.on('connection', function (socket) {
 
     socket.on('addCheckToDB', function (mes) {
         saleserver.addCheckToDB(mes);
+
     });
 
 
