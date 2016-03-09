@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a3977de-6a97-4d2b-9a84-652ada34cb6c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dbdata/kassa.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dbdata/kassaoper.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/moneyworking.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/checks.db" afterPath="$PROJECT_DIR$/dbdata/checks.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/drinks.db" afterPath="$PROJECT_DIR$/dbdata/drinks.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/groups.db" afterPath="$PROJECT_DIR$/dbdata/groups.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/ingridients.db" afterPath="$PROJECT_DIR$/dbdata/ingridients.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/style.css" afterPath="$PROJECT_DIR$/public/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mymodules/dbconf.json" afterPath="$PROJECT_DIR$/mymodules/dbconf.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mymodules/dbmanager.js" afterPath="$PROJECT_DIR$/mymodules/dbmanager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/admin_drinks.js" afterPath="$PROJECT_DIR$/public/admin/admin_drinks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/index.html" afterPath="$PROJECT_DIR$/public/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html" afterPath="$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" afterPath="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main/index.html" afterPath="$PROJECT_DIR$/public/main/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main/maincontroller.js" afterPath="$PROJECT_DIR$/public/main/maincontroller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saleserver.js" afterPath="$PROJECT_DIR$/saleserver.js" />
     </list>
@@ -31,11 +38,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="checks.db" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbdata/checks.db">
+      <file leaf-file-name="maincontroller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/main/maincontroller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.48445597">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_drinks.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/admin_drinks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="267" column="21" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="21" />
+              <folding>
+                <element signature="e#10403#10483#0" expanded="false" />
+                <element signature="e#10529#10614#0" expanded="false" />
+                <element signature="e#10653#10731#0" expanded="false" />
+                <element signature="e#10773#10854#0" expanded="false" />
+                <element signature="e#10907#10999#0" expanded="false" />
+                <element signature="e#11045#11130#0" expanded="false" />
+                <element signature="e#11182#11273#0" expanded="false" />
+                <element signature="e#11325#11416#0" expanded="false" />
+                <element signature="e#11461#11545#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moneyworking.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/moneyworking.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -45,17 +82,17 @@
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="276" column="43" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="43" />
+              <caret line="265" column="37" selection-start-line="265" selection-start-column="19" selection-end-line="265" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saleserver.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="saleserver.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saleserver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9496403">
-              <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="224" column="80" selection-start-line="224" selection-start-column="80" selection-end-line="224" selection-end-column="80" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -63,21 +100,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nedb.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/nedb/browser-version/out/nedb.js">
+      <file leaf-file-name="kassa.db" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbdata/kassa.db">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="884" column="42" selection-start-line="884" selection-start-column="34" selection-end-line="884" selection-end-column="42" />
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ingridients.db" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbdata/ingridients.db">
+      <file leaf-file-name="kassaoper.db" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbdata/kassaoper.db">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="4" column="77" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="77" />
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/main/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6538463">
+              <caret line="106" column="35" selection-start-line="106" selection-start-column="31" selection-end-line="106" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -99,9 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/admin/script.js" />
-        <option value="$PROJECT_DIR$/mymodules/coffe.js" />
-        <option value="$PROJECT_DIR$/mymodules/tee.js" />
         <option value="$PROJECT_DIR$/mymodules/recept.js" />
         <option value="$PROJECT_DIR$/mymodules/bubble.js" />
         <option value="$PROJECT_DIR$/mymodules/ingredient.js" />
@@ -131,25 +175,28 @@
         <option value="$PROJECT_DIR$/public/admindrinks/addgroupe.tmpl.html" />
         <option value="$PROJECT_DIR$/public/admindrinks/adddrink.tmpl.html" />
         <option value="$PROJECT_DIR$/public/admin/inform.tmpl.html" />
-        <option value="$PROJECT_DIR$/mymodules/dbconf.json" />
-        <option value="$PROJECT_DIR$/mymodules/dbmanager.js" />
-        <option value="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" />
         <option value="$PROJECT_DIR$/public/admin/adddrink.tmpl.html" />
-        <option value="$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html" />
-        <option value="$PROJECT_DIR$/public/admin/index.html" />
         <option value="$PROJECT_DIR$/public/admin/addingridient.tmpl.html" />
         <option value="$PROJECT_DIR$/public/admin/allingridientstable.tmpl.html" />
         <option value="$PROJECT_DIR$/public/admin/addnewingridienttodb.tmpl.html" />
-        <option value="$PROJECT_DIR$/public/main/index.html" />
         <option value="$PROJECT_DIR$/dbdata/drinks.db" />
         <option value="$PROJECT_DIR$/dbdata/groups.db" />
-        <option value="$PROJECT_DIR$/dbdata/ingridients.db" />
-        <option value="$PROJECT_DIR$/public/admin/admin_drinks.js" />
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
         <option value="$PROJECT_DIR$/dbdata/checks.db" />
-        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/dbdata/ingridients.db" />
+        <option value="$PROJECT_DIR$/mymodules/dbconf.json" />
+        <option value="$PROJECT_DIR$/mymodules/dbmanager.js" />
+        <option value="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" />
+        <option value="$PROJECT_DIR$/public/admin/index.html" />
+        <option value="$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html" />
+        <option value="$PROJECT_DIR$/dbdata/kassa.db" />
+        <option value="$PROJECT_DIR$/dbdata/kassaoper.db" />
+        <option value="$PROJECT_DIR$/public/main/index.html" />
         <option value="$PROJECT_DIR$/public/main/maincontroller.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/saleserver.js" />
+        <option value="$PROJECT_DIR$/public/admin/admin_drinks.js" />
+        <option value="$PROJECT_DIR$/public/admin/moneyworking.tmpl.html" />
       </list>
     </option>
   </component>
@@ -238,6 +285,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alexa_pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alexandra_pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,14 +425,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1360" height="726" extended-state="0" />
+    <frame x="1" y="1" width="1360" height="726" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1603631" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25037822" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4857143" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3042017" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22222222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -399,32 +464,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/main/maincontroller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="210" column="7" selection-start-line="210" selection-start-column="7" selection-end-line="210" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saleserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbdata/checks.db">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -521,6 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -558,6 +598,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.18853974">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -601,52 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/main/ulsidebarmainmenu.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymodules/dbconf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymodules/dbmanager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8063781">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91767555">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/admin/adddrink.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8232446">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -691,14 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/main/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="47.076923">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbdata/drinks.db">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -715,51 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/addgroupe.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="787" column="7" selection-start-line="787" selection-start-column="5" selection-end-line="787" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/admin_drinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.7035832">
-          <caret line="184" column="67" selection-start-line="184" selection-start-column="67" selection-end-line="184" selection-end-column="67" />
-          <folding>
-            <element signature="e#8910#8990#0" expanded="false" />
-            <element signature="e#9036#9121#0" expanded="false" />
-            <element signature="e#9160#9238#0" expanded="false" />
-            <element signature="e#9280#9361#0" expanded="false" />
-            <element signature="e#9414#9506#0" expanded="false" />
-            <element signature="e#9552#9637#0" expanded="false" />
-            <element signature="e#9689#9780#0" expanded="false" />
-            <element signature="e#9832#9923#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/main/maincontroller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5495208">
-          <caret line="123" column="13" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -772,22 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="276" column="43" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/ingridients.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="4" column="77" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nedb/browser-version/out/nedb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -796,13 +730,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saleserver.js">
+    <entry file="file://$PROJECT_DIR$/mymodules/dbconf.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9496403">
-          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.37777779">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/ingridients.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37777779">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.615385">
+          <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/main/ulsidebarmainmenu.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047222223">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/addgroupe.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymodules/dbmanager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4715026">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="22" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33055556">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="69" column="79" selection-start-line="69" selection-start-column="79" selection-end-line="69" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/kassaoper.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/main/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6538463">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="31" selection-end-line="106" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/kassa.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="265" column="37" selection-start-line="265" selection-start-column="19" selection-end-line="265" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saleserver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="224" column="80" selection-start-line="224" selection-start-column="80" selection-end-line="224" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/admin_drinks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="267" column="21" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="21" />
+          <folding>
+            <element signature="e#10403#10483#0" expanded="false" />
+            <element signature="e#10529#10614#0" expanded="false" />
+            <element signature="e#10653#10731#0" expanded="false" />
+            <element signature="e#10773#10854#0" expanded="false" />
+            <element signature="e#10907#10999#0" expanded="false" />
+            <element signature="e#11045#11130#0" expanded="false" />
+            <element signature="e#11182#11273#0" expanded="false" />
+            <element signature="e#11325#11416#0" expanded="false" />
+            <element signature="e#11461#11545#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/moneyworking.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/main/maincontroller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48445597">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

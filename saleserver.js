@@ -97,7 +97,7 @@ var saleserver = {
                 }
 
                 var newcount = +(docs[0].count) - +(item.count);
-                
+
                 db_manager.ingridients.update({_id : docs[0]._id}, {$set : {count : newcount}}, {}, function (err, numReplaced) {
                     if (err != null) {
                         console.log("error = ", err);
@@ -181,6 +181,52 @@ var saleserver = {
                 console.log("error = ", err);
             }
         });
+    }
+    ///////////////////////////////////////////////////////
+    , addMoneyToKassa : function(money){
+        db_manager.kassaoper.insert({type: "add_manual", money : money}, function(err, newDoc){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
+        db_manager.kassa.update({type : "money"}, {$inc : {value : +(money.count)}},{},function(err, num){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
+    },
+    getMoneyFromKassa : function(money){
+        db_manager.kassaoper.insert({type: "get_manual", money : money}, function(err, newDoc){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
+        db_manager.kassa.update({type : "money"}, {$inc : {value : -(+(money.count))}},{},function(err, num){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
+    }
+    , getCurrentMoneyValueFromKassa : function(sender){
+        db_manager.kassa.find({type : "money"}, function(err, docs){
+            if (err != null) {
+                console.log("error = ", err);
+                return;
+            }
+            sender(docs[0]);
+        })
+    }
+    , updateKassaByCheck : function(check){
+        db_manager.kassaoper.insert({type: "add_by_check", money : check.total}, function(err, newDoc){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
+        db_manager.kassa.update({type : "money"}, {$inc : {value : +(check.total)}},{},function(err, num){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
     }
 }
 

@@ -1,0 +1,21 @@
+<h3>Работа с Кассой</h3>
+<h4>Сейчас в кассе: {{main.curmoney}}</h4>
+
+
+<label class="col-sm-2 col-sm-2 control-label">Сумма</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.money.count">
+</div>
+
+<p>.</p>
+
+<button type="button" class="btn btn-theme02" ng-click="main.addMoneyToKassa()">
+    <i class="fa fa-check"></i>
+    Добавить в кассу
+</button>
+<button type="button" class="btn btn-theme04" ng-click="main.getMoneyFromKassa()">
+    Забрать из кассы
+</button>
+<button type="button" class="btn btn-theme03 pull-right" ng-click="main.noUseMoney()">
+    Скрыть панель работы с кассой
+</button>

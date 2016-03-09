@@ -5,4 +5,6 @@
   , "groupsdb" : "groups.db"
   , "ingidientsdb" : "ingridients.db"
   , "ingridientsmassdb" : "ingridientsmass.db"
+  , "kassaoperdb" : "kassaoper.db"
+  , "kassadb" : "kassa.db"
 }

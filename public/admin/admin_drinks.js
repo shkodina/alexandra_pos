@@ -249,6 +249,52 @@ angular.module('admindrinks', [
          main.hideAllIngridients = function(){
             main.showallingridients = null;
         };
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        //
+        //      A D D    A N D    G E T    M O N E Y
+        //
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+
+        main.moneyinuse = null;
+
+        main.money = {
+            date : {}
+            , timestamp : {}
+            , count : 0
+        };
+        main.curmoney = 0;
+        valueService.getSocket().on('updateManeyValueFromDB', function(mes){
+            main.curmoney = mes.value;
+            $scope.$apply();
+        });
+
+        main.useMoney = function(){
+            main.moneyinuse = {};
+            valueService.getSocket().emit('getCurrentMoneyFromKassa', 0);
+        }
+
+        main.noUseMoney = function(){
+            main.moneyinuse = null;
+        }
+
+        main.getMoneyFromKassa = function(){
+            main.money.date = new Date();
+            main.money.timestamp = main.money.date.getTime();
+            valueService.getSocket().emit('getMoneyFromKassa',main.money);
+            main.moneyinuse = null;
+
+        };
+
+        main.addMoneyToKassa = function(){
+            main.money.date = new Date();
+            main.money.timestamp = main.money.date.getTime();
+            valueService.getSocket().emit('addMoneyToKassa',main.money);
+            main.moneyinuse = null;
+        };
+
     })
 
     //------------------------------------------------------------------
@@ -297,6 +343,11 @@ angular.module('admindrinks', [
     .directive('allingridientstable', function () {
         return {
             templateUrl: 'allingridientstable.tmpl.html'
+        }
+    })
+    .directive('moneyworking', function () {
+        return {
+            templateUrl: 'moneyworking.tmpl.html'
         }
     })
 

@@ -14,6 +14,7 @@ angular.module('maincontroller', [
 
         socket.emit('updateMainFromDB', 0);
         socket.emit('getAllGroupsFromDB', 0);
+        socket.emit('getCurrentMoneyFromKassa', 0);
 
 
         socket.on('setMainDrinkListFromDB', function (mes) {
@@ -52,10 +53,16 @@ angular.module('maincontroller', [
     .controller('MainCtrl', function ($scope, $rootScope, valueService) {
         var main = this;
         main.title = 'Bubble Maker';
+        main.curmoney = 0;
 
         main.drinklists = valueService.getDrinkList();
         main.curdrinktype = {};
         main.check = valueService.getNewCheck();
+
+        valueService.getSocket().on('updateManeyValueFromDB', function(mes){
+            main.curmoney = mes.value;
+            $scope.$apply();
+        });
 
         valueService.getSocket().on('setListFromDB', function (mes) {
             main.curlist = mes;

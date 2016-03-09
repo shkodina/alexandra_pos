@@ -190,10 +190,6 @@ io.on('connection', function (socket) {
     });
 
 
-
-
-
-
     socket.on('addCurDrinkToDB', function (msg) {
         console.log(msg);
         saleserver.addDrink(msg);
@@ -203,10 +199,6 @@ io.on('connection', function (socket) {
         console.log(msg);
         saleserver.deleteDrink(msg);
     });
-
-
-
-
 
 
     socket.on('addNewGroupToDB', function (msg) {
@@ -223,11 +215,7 @@ io.on('connection', function (socket) {
     });
 
 
-
-
-
-
-    socket.on('getAllIngridientsFromDB', function(mes){
+    socket.on('getAllIngridientsFromDB', function (mes) {
         console.log("ask getAllIngridientsFromDB");
         console.log(mes);
         saleserver.getAllIngridients(function (docs) {
@@ -235,7 +223,7 @@ io.on('connection', function (socket) {
         });
     });
 
-    socket.on('getAllIngridientsMassFromDB', function(mes){
+    socket.on('getAllIngridientsMassFromDB', function (mes) {
         console.log("ask getAllIngridientsFromDB");
         console.log(mes);
         saleserver.getAllIngridientsMass(function (docs) {
@@ -244,19 +232,19 @@ io.on('connection', function (socket) {
     });
 
 
-    socket.on('addIngridientToDB', function (mes){
+    socket.on('addIngridientToDB', function (mes) {
         console.log('ask add new ing to DB');
         console.log(mes);
         saleserver.addIngridient(mes);
     });
 
-    socket.on('deleteIngridientFromDB', function(mes){
+    socket.on('deleteIngridientFromDB', function (mes) {
         console.log('ask delete ingridient in DB');
         console.log(mes);
         saleserver.deleteIngridient(mes);
     });
 
-    socket.on('updateIngridientInDB', function(mes){
+    socket.on('updateIngridientInDB', function (mes) {
         console.log('ask update ingridient in DB');
         console.log(mes);
         saleserver.updateIngridient(mes);
@@ -275,7 +263,37 @@ io.on('connection', function (socket) {
     socket.on('addCheckToDB', function (mes) {
         saleserver.addCheckToDB(mes);
         saleserver.updateIngridientsByCheck(mes);
+        saleserver.updateKassaByCheck(mes);
+        saleserver.getCurrentMoneyValueFromKassa(function(money){
+            socket.emit('updateManeyValueFromDB', money);
+        });
     });
+
+
+    //////////////////////////////////////////////////////////////////////
+    socket.on('getMoneyFromKassa', function (mes) {
+        console.log('ask getMoneyFromKassa');
+        console.log(mes);
+        saleserver.getMoneyFromKassa(mes);
+        saleserver.getCurrentMoneyValueFromKassa(function(money){
+            socket.emit('updateManeyValueFromDB', money);
+        });
+    });
+    socket.on('addMoneyToKassa', function (mes) {
+        console.log('ask addMoneyToKassa');
+        console.log(mes);
+        saleserver.addMoneyToKassa(mes);
+        saleserver.getCurrentMoneyValueFromKassa(function(money){
+            socket.emit('updateManeyValueFromDB', money);
+        });
+    });
+
+    socket.on('getCurrentMoneyFromKassa', function (mes) {
+        saleserver.getCurrentMoneyValueFromKassa(function(money){
+            socket.emit('updateManeyValueFromDB', money);
+        });
+    });
+
 
 
 });
@@ -300,13 +318,12 @@ setInterval(function () {
 module.exports = app;
 
 
-
 ///////////////////////////////
 ///////////////////////////////
 
 /*
-saleserver.addIngridientMass({type : 'g', name : 'г'});
-saleserver.addIngridientMass({type : 'ml', name : 'мл'});
-saleserver.addIngridientMass({type : 'pice', name : 'штк'});
-*/
+ saleserver.addIngridientMass({type : 'g', name : 'г'});
+ saleserver.addIngridientMass({type : 'ml', name : 'мл'});
+ saleserver.addIngridientMass({type : 'pice', name : 'штк'});
+ */
 
