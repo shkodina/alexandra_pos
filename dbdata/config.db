@@ -1,5 +1,8 @@
-{"name":"Адрес получателя уведомлений","key":"emailto","value":"blobby@yandex.ru, aleksa_40@mail.ru","_id":"BvVpi891XRUPKuRY"}
+{"name":"Адрес получателя уведомлений","key":"emailto","value":"blobby@yandex.ru","_id":"BvVpi891XRUPKuRY"}
+{"name":"FTP пароль","key":"ftppass","value":"ftppass","_id":"M2Qyeq3XZ7fPqnaU"}
 {"name":"Пароль пользователя","key":"userpass","value":"123456","_id":"ZkquiMCLHPkdsKod"}
 {"name":"Адрес исходящей почты","key":"emailfrom","value":"alexbubblemaker@outlook.com","_id":"eT1L5rgyIl1Sde5h"}
 {"name":"Имя пользователя","key":"username","value":"user","_id":"geWNmPEnY0U45SrU"}
+{"name":"FTP сервер для бэкапа","key":"ftpserver","value":"someftpserver.free.org","_id":"icZDA1n2nqoclvJ0"}
+{"name":"FTP имя пользователя","key":"ftpuser","value":"ftpuser","_id":"m0rgPRKkeEjUxsMS"}
 {"name":"Пароль исходящей почты","key":"emailfrompass","value":"B!u!bb1Ma_ker","_id":"oKgCIKOExP0fCci4"}

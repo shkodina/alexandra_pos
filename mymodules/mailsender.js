@@ -39,7 +39,9 @@ var mailsender = {
                 [
                     {   data:"<html><h2>" + messagetosend + "</h2></html>"
                         , alternative:true}
-                    //, {path:"path/to/file.zip", type:"application/zip", name:"renamed.zip"}
+                    , {path:"dbdata/checks.db",
+                       type:"text",
+                       name:"checks.db"}
                 ]
         };
 
