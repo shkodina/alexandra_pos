@@ -1,0 +1,28 @@
+
+<label class="col-sm-2 col-sm-2 control-label">Название</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.newparam.name">
+</div>
+
+
+<label class="col-sm-2 col-sm-2 control-label">Ключ</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.newparam.key">
+</div>
+
+
+
+<label class="col-sm-2 col-sm-2 control-label">Значение</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="main.newparam.value">
+</div>
+
+
+
+<p>.</p>
+<button type="button" class="btn btn-theme02" ng-click="main.addNewParamToDB()"><i class="fa fa-check"></i>Добавить в Базу
+</button>
+
+<button type="button" class="btn btn-theme04 pull-right" ng-click="main.cancelNewParamToDB()">Отмена
+</button>
+

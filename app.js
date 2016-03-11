@@ -168,6 +168,7 @@ function onListening() {
 //		 M Y   S E R V E R
 //
 //***********************************************************
+//***********************************************************
 
 var saleserver = require("./saleserver.js");
 
@@ -176,6 +177,7 @@ var saleserver = require("./saleserver.js");
 //
 //		 S O C K E T . I O
 //
+//***********************************************************
 //***********************************************************
 
 var io = require('socket.io')(server);
@@ -189,6 +191,13 @@ io.on('connection', function (socket) {
         });
     });
 
+    //**********************************************************
+    //**********************************************************
+    //
+    //    D R I N K S
+    //
+    //**********************************************************
+    //**********************************************************
 
     socket.on('addCurDrinkToDB', function (msg) {
         console.log(msg);
@@ -199,6 +208,14 @@ io.on('connection', function (socket) {
         console.log(msg);
         saleserver.deleteDrink(msg);
     });
+
+    //**********************************************************
+    //**********************************************************
+    //
+    //    G R O U P S
+    //
+    //**********************************************************
+    //**********************************************************
 
 
     socket.on('addNewGroupToDB', function (msg) {
@@ -213,6 +230,15 @@ io.on('connection', function (socket) {
             socket.emit('setGroupsFromDB', docs);
         });
     });
+
+
+    //**********************************************************
+    //**********************************************************
+    //
+    //    I N G R I D I E N T S
+    //
+    //**********************************************************
+    //**********************************************************
 
 
     socket.on('getAllIngridientsFromDB', function (mes) {
@@ -250,7 +276,13 @@ io.on('connection', function (socket) {
         saleserver.updateIngridient(mes);
     });
 
-    ////////////////////////////////////////////////////////////////////////
+    //**********************************************************
+    //**********************************************************
+    //
+    //    M A I N    A N D    C H E C K
+    //
+    //**********************************************************
+    //**********************************************************
 
     socket.on('updateMainFromDB', function (msg) {
         saleserver.getAllDrinksByType(null, function (docs) {
@@ -264,36 +296,66 @@ io.on('connection', function (socket) {
         saleserver.addCheckToDB(mes);
         saleserver.updateIngridientsByCheck(mes);
         saleserver.updateKassaByCheck(mes);
-        saleserver.getCurrentMoneyValueFromKassa(function(money){
+        saleserver.getCurrentMoneyValueFromKassa(function (money) {
             socket.emit('updateManeyValueFromDB', money);
         });
     });
 
 
-    //////////////////////////////////////////////////////////////////////
+    //**********************************************************
+    //**********************************************************
+    //
+    //    K A S S A
+    //
+    //**********************************************************
+    //**********************************************************
+
     socket.on('getMoneyFromKassa', function (mes) {
         console.log('ask getMoneyFromKassa');
         console.log(mes);
         saleserver.getMoneyFromKassa(mes);
-        saleserver.getCurrentMoneyValueFromKassa(function(money){
+        saleserver.getCurrentMoneyValueFromKassa(function (money) {
             socket.emit('updateManeyValueFromDB', money);
         });
     });
+
     socket.on('addMoneyToKassa', function (mes) {
         console.log('ask addMoneyToKassa');
         console.log(mes);
         saleserver.addMoneyToKassa(mes);
-        saleserver.getCurrentMoneyValueFromKassa(function(money){
+        saleserver.getCurrentMoneyValueFromKassa(function (money) {
             socket.emit('updateManeyValueFromDB', money);
         });
     });
 
     socket.on('getCurrentMoneyFromKassa', function (mes) {
-        saleserver.getCurrentMoneyValueFromKassa(function(money){
+        saleserver.getCurrentMoneyValueFromKassa(function (money) {
             socket.emit('updateManeyValueFromDB', money);
         });
     });
 
+
+    //**********************************************************
+    //**********************************************************
+    //
+    //    C O N F I G U R A T O R
+    //
+    //**********************************************************
+    //**********************************************************
+
+    socket.on('addNewConfigParamToDB', function (mes) {
+        saleserver.addNewConfigParamToDB(mes);
+    });
+
+    socket.on('updateConfigParamToDB', function (mes) {
+        saleserver.updateConfigParamToDB(mes);
+    });
+
+    socket.on('getAllConfigParams', function (mes) {
+        saleserver.getAllConfigParams(function (params) {
+            socket.emit('setAllConfigParams', params);
+        });
+    });
 
 
 });

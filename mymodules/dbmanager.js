@@ -27,6 +27,9 @@ var db_manager = {
         this.kassa = new Datastore(dbconf.rootdir + dbconf.kassadb);
         this.kassa.loadDatabase();
 
+        this.config = new Datastore(dbconf.rootdir + dbconf.configdb);
+        this.config.loadDatabase();
+
     }
 }
 

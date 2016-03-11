@@ -6,6 +6,14 @@ var db_manager = require("./mymodules/dbmanager.js");
 db_manager.init();
 
 var saleserver = {
+    //**********************************************************
+    //**********************************************************
+    //
+    //    D R I N K S
+    //
+    //**********************************************************
+    //**********************************************************
+
     addDrink: function (drink) {
         if (drink.ingredients != null) {
             drink.ingredients.forEach(function (ing) {
@@ -19,6 +27,9 @@ var saleserver = {
             }
         });
     },
+
+
+
     getAllDrinksByType: function (drink_type, sender) {
         if (drink_type == null) {
             db_manager.drinks.find({}).sort({
@@ -39,6 +50,9 @@ var saleserver = {
         }
 
     },
+
+
+
     deleteDrink: function (drink) {
         db_manager.drinks.remove({
             type: drink.type,
@@ -49,10 +63,15 @@ var saleserver = {
             }
         });
     },
-    addCheckToDB: function (mes) {
-        console.log("ask add check into db");
-        console.log(mes);
+    //**********************************************************
+    //**********************************************************
+    //
+    //    C H E C K
+    //
+    //**********************************************************
+    //**********************************************************
 
+    addCheckToDB: function (mes) {
         mes.list.forEach(function (item) {
             if ('$$hashKey' in item){
                 delete item['$$hashKey'];
@@ -62,19 +81,16 @@ var saleserver = {
                 delete item.drink['$$hashKey'];
             }
         });
-
-        console.log("after clearing");
-        console.log(mes);
-
         db_manager.checks.insert(mes, function (err, newDoc) {
             if (err != null) {
                 console.log("error = ", err);
             }
         });
     }
-    , updateIngridientsByCheck  : function(check){
-        console.log("updateIngridientsByCheck");
 
+
+
+    , updateIngridientsByCheck  : function(check){
         var inglist = [];
         for (var i in check.list){
             if (check.list[i].drink.ingredients != null){
@@ -95,9 +111,7 @@ var saleserver = {
                     console.error(err);
                     return;
                 }
-
                 var newcount = +(docs[0].count) - +(item.count);
-
                 db_manager.ingridients.update({_id : docs[0]._id}, {$set : {count : newcount}}, {}, function (err, numReplaced) {
                     if (err != null) {
                         console.log("error = ", err);
@@ -105,49 +119,61 @@ var saleserver = {
 
                 });
             });
-
-
         });
     }
-    , getAllGroups: function (sender) {
+    //**********************************************************
+    //**********************************************************
+    //
+    //    G R O U P S
+    //
+    //**********************************************************
+    //**********************************************************
 
+    , getAllGroups: function (sender) {
         db_manager.groups.find({}).sort({
             type: 1
         }).exec(function (err, docs) {
             sender(docs);
         });
-
     },
-    addNewGroup: function (newgroup) {
-        console.log("ask add group into db");
-        console.log(newgroup);
 
+
+
+    addNewGroup: function (newgroup) {
         db_manager.groups.insert(newgroup, function (err, newDoc) {
             if (err != null) {
                 console.log("error = ", err);
             }
         });
     }
-    , addIngridient: function (ingr) {
-        console.log("ask add ingridient into db");
-        console.log(ingr);
+    //**********************************************************
+    //**********************************************************
+    //
+    //    I N G R I D I E N T S
+    //
+    //**********************************************************
+    //**********************************************************
 
+    , addIngridient: function (ingr) {
         db_manager.ingridients.insert(ingr, function (err, newDoc) {
             if (err != null) {
                 console.log("error = ", err);
             }
         });
     }
-    , addIngridientMass: function (ingrmass) {
-        console.log("ask add ingrmass into db");
-        console.log(ingrmass);
 
+
+
+    , addIngridientMass: function (ingrmass) {
         db_manager.ingridientsmass.insert(ingrmass, function (err, newDoc) {
             if (err != null) {
                 console.log("error = ", err);
             }
         });
     }
+
+
+
     , getAllIngridients: function (sender) {
         db_manager.ingridients.find({}).sort({
             type: 1
@@ -155,6 +181,9 @@ var saleserver = {
             sender(docs);
         });
     }
+
+
+
     , getAllIngridientsMass: function (sender) {
         db_manager.ingridientsmass.find({}).sort({
             type: 1
@@ -162,6 +191,9 @@ var saleserver = {
             sender(docs);
         });
     }
+
+
+
     , deleteIngridient: function (ingr) {
         db_manager.ingridients.remove({
             _id : ingr._id
@@ -171,6 +203,9 @@ var saleserver = {
             }
         });
     }
+
+
+
     , updateIngridient: function (ingr) {
         if ('$$hashKey' in ingr){
             delete ingr['$$hashKey'];
@@ -182,7 +217,14 @@ var saleserver = {
             }
         });
     }
-    ///////////////////////////////////////////////////////
+    //**********************************************************
+    //**********************************************************
+    //
+    //    K A S S A
+    //
+    //**********************************************************
+    //**********************************************************
+
     , addMoneyToKassa : function(money){
         db_manager.kassaoper.insert({type: "add_manual", money : money}, function(err, newDoc){
             if (err != null) {
@@ -194,7 +236,11 @@ var saleserver = {
                 console.log("error = ", err);
             }
         })
-    },
+    }
+
+
+
+    ,
     getMoneyFromKassa : function(money){
         db_manager.kassaoper.insert({type: "get_manual", money : money}, function(err, newDoc){
             if (err != null) {
@@ -207,6 +253,9 @@ var saleserver = {
             }
         })
     }
+
+
+
     , getCurrentMoneyValueFromKassa : function(sender){
         db_manager.kassa.find({type : "money"}, function(err, docs){
             if (err != null) {
@@ -216,6 +265,9 @@ var saleserver = {
             sender(docs[0]);
         })
     }
+
+
+
     , updateKassaByCheck : function(check){
         var money = {
             date : check.date
@@ -232,6 +284,53 @@ var saleserver = {
             if (err != null) {
                 console.log("error = ", err);
             }
+        })
+    }
+    //**********************************************************
+    //**********************************************************
+    //
+    //    C O N F I G U R A T O R
+    //
+    //**********************************************************
+    //**********************************************************
+
+    , addNewConfigParamToDB : function(param){
+        db_manager.config.insert(param, function(err, newDoc){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        })
+    }
+
+    , updateConfigParamToDB : function(param){
+        console.log('updateConfigParamToDB');
+        console.log(param);
+
+        db_manager.config.update( { _id : param._id }, {$set : {value : param.value}}, {},function(err, num){
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        });
+    }
+
+    , getConfigParamByKey : function(key, sender){
+        db_manager.config.find({key : key}, function(err, docs){
+            if (err != null) {
+                console.log("error = ", err);
+                return;
+            }
+            sender(docs[0]);
+        })
+    }
+
+
+    , getAllConfigParams : function(sender){
+        db_manager.config.find({}, function(err, docs){
+            if (err != null) {
+                console.log("error = ", err);
+                return;
+            }
+            sender(docs);
         })
     }
 }

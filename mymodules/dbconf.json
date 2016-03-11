@@ -7,4 +7,5 @@
   , "ingridientsmassdb" : "ingridientsmass.db"
   , "kassaoperdb" : "kassaoper.db"
   , "kassadb" : "kassa.db"
+  , "configdb" : "config.db"
 }

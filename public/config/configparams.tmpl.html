@@ -1,0 +1,34 @@
+<h3>Параметры конфигурации</h3>
+
+<button type="button" class="btn btn-theme03" ng-click="main.createNewParam()">Создать новый параметр</button>
+
+
+<table class="table table-striped table-advance table-hover">
+    <hr>
+    <thead>
+    <tr>
+        <th>Название параметра</th>
+        <th>Ключ параметра</th>
+        <th>Значение параметра</th>
+        <th>Операции</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="param in main.paramlist">
+        <td>{{param.name}}</td>
+        <td>{{param.key}}</td>
+        <td>{{param.value}}</td>
+
+        <td>
+            <button class="btn btn-success btn-xs" ><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" ng-click="main.updateConfigParamToDB(param)"><i class="fa fa-pencil"></i></button>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+
+

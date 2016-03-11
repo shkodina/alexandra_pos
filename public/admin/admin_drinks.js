@@ -264,6 +264,7 @@ angular.module('admindrinks', [
             date : {}
             , timestamp : {}
             , count : 0
+            , reason : "Просто захотелось"
         };
         main.curmoney = 0;
         valueService.getSocket().on('updateManeyValueFromDB', function(mes){
