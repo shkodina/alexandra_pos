@@ -6,3 +6,5 @@
 {"type":"add_manual","money":{"date":"2016-03-09T22:42:16.546Z","timestamp":1457563336546,"count":"555"},"_id":"rCHwcOaeGYRehvWs"}
 {"type":"get_manual","money":{"date":"2016-03-11T16:04:01.469Z","timestamp":1457712241469,"count":"75","reason":"Просто захотелось"},"_id":"rpn3Af0fOttmiKWp"}
 {"type":"get_manual","money":{"date":"2016-03-09T23:03:18.255Z","timestamp":1457564598255,"count":"800"},"_id":"yQ0sodeYcwLNa1BP"}
+{"type":"add_by_check","money":{"date":"2016-03-11T22:32:05.545Z","timestamp":1457735525545,"count":300},"_id":"r0DxEcNrIIseyuKp"}
+{"type":"add_by_check","money":{"date":"2016-03-11T22:32:09.729Z","timestamp":1457735529729,"count":450},"_id":"ONu2omXutrWQjNY0"}
