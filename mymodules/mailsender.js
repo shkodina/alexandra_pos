@@ -2,10 +2,6 @@
  * Created by Alex on 11.03.2016.
  */
 
-
-
-
-
 var mailsender = {
     init : function(){
         mailsender.email = require("emailjs/email");
@@ -39,9 +35,9 @@ var mailsender = {
                 [
                     {   data:"<html><h2>" + messagetosend + "</h2></html>"
                         , alternative:true}
-                    , {path:"dbdata/checks.db",
+                   /* , {path:"dbdata/checks.db",
                        type:"text",
-                       name:"checks.db"}
+                       name:"checks.db"}*/
                 ]
         };
 
@@ -49,6 +45,29 @@ var mailsender = {
         mailsender.server.send(message, function(err, message) {
             console.log(err || message);
         });
+    }
+    , sendbackup : function(mes){
+        var message = {
+            text:    mes.text
+            , from:    "BubbleMaker <" + mailsender.emailfrom +">"
+            , to:      mailsender.emailto
+            //, cc:      "else <blobby@yandex.ru>",
+            , subject: "Бэкап от системы учета"
+            , attachment:
+                [
+                    {   data:"<html><h2>" + mes.text + "</h2></html>"
+                        , alternative:true}
+                    , {path: mes.path,
+                    type:"zip",
+                    name: mes.name}
+                ]
+        };
+
+        // send the message and get a callback with an error or details of the message that was sent
+        mailsender.server.send(message, function(err, message) {
+            console.log(err || message);
+        });
+
     }
 };
 

@@ -187,6 +187,20 @@ mailsender.init();
 //***********************************************************
 //***********************************************************
 //
+//		 B A C K U P E R
+//
+//***********************************************************
+//***********************************************************
+
+
+var backuper = require("./mymodules/backuper");
+backuper.init();
+
+
+
+//***********************************************************
+//***********************************************************
+//
 //		 S O C K E T . I O
 //
 //***********************************************************
@@ -380,7 +394,20 @@ io.on('connection', function (socket) {
     socket.on('senMessageByEmail', function (mes) {
         console.log("senMessageByEmail");
         console.log(mes);
-        mailsender.notify(mes.message);
+        //mailsender.notify(mes.message);
+
+
+        backuper.createBackup({
+            filepath : "./dbdata/checks.db"
+            , filename : "checks.db"
+            , resultname : "dbdata/test.zip"
+        })
+
+
+        mes.text = mes.message;
+        mes.path = "dbdata/test.zip";
+        mes.name = "test.zip";
+        mailsender.sendbackup(mes);
     });
 
 });
