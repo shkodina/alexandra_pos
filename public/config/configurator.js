@@ -66,6 +66,11 @@ angular.module('configurator', [
         main.cancelNewParamToDB = function(){
             main.newparam = null;
         }
+
+        main.senMessageByEmail = function(){
+            var message = prompt("Введите текст для тестового письма");
+            valueService.getSocket().emit('senMessageByEmail', {message : message});
+        }
     })
     //------------------------------------------------------------------
     //------------------------------------------------------------------
