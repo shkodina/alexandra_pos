@@ -51,6 +51,7 @@ angular.module('configurator', [
         main.addNewParamToDB = function(){
             valueService.getSocket().emit('addNewConfigParamToDB', main.newparam);
             main.cancelNewParamToDB();
+            valueService.getSocket().emit('getAllConfigParams', 0);
         }
 
         main.updateConfigParamToDB = function(param){

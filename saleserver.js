@@ -325,13 +325,11 @@ var saleserver = {
 
 
     , getAllConfigParams : function(sender){
-        db_manager.config.find({}, function(err, docs){
-            if (err != null) {
-                console.log("error = ", err);
-                return;
-            }
+        db_manager.config.find({}).sort({
+            key: 1
+        }).exec(function (err, docs) {
             sender(docs);
-        })
+        });
     }
 }
 
