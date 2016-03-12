@@ -1,11 +1,13 @@
 {
   "rootdir": "./dbdata/"
-  , "drinksdb" : "drinks.db"
-  , "checksdb" : "checks.db"
-  , "groupsdb" : "groups.db"
-  , "ingidientsdb" : "ingridients.db"
-  , "ingridientsmassdb" : "ingridientsmass.db"
-  , "kassaoperdb" : "kassaoper.db"
-  , "kassadb" : "kassa.db"
-  , "configdb" : "config.db"
+  , "dblist" : [
+    {"drinks" : "drinks.db"}
+  , {"checks" : "checks.db"}
+  , {"groups" : "groups.db"}
+  , {"ingridients" : "ingridients.db"}
+  , {"ingridientsmass" : "ingridientsmass.db"}
+  , {"kassaoper" : "kassaoper.db"}
+  , {"kassa" : "kassa.db"}
+  , {"config" : "config.db"}
+  ]
 }

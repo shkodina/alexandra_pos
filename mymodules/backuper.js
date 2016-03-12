@@ -7,10 +7,9 @@ var backuper = {
         backuper.fs = require('fs');
         backuper.archiver = require('archiver');
 
-
     }
-    , createBackup : function(confdata){
 
+    , createBackup : function(confdata){
         var archive = backuper.archiver('zip');
 
         archive.on('error', function(err) {
@@ -24,13 +23,15 @@ var backuper = {
             console.log('archiver has been finalized and the output file descriptor has closed.');
         });
 
-
         archive.pipe(output);
 
-        archive
-            .append(backuper.fs.createReadStream(confdata.filepath), { name: confdata.filename })
-           // .append(backuper.fs.createReadStream(file2), { name: 'checks.db' })
-            .finalize();
+        for (var i in confdata.files){
+            archive
+                .append(backuper.fs.createReadStream(confdata.files[i].path),
+                    { name: confdata.files[i].name })
+            ;
+        };
+        archive .finalize();
     }
 }
 

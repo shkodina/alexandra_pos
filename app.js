@@ -197,7 +197,6 @@ var backuper = require("./mymodules/backuper");
 backuper.init();
 
 
-
 //***********************************************************
 //***********************************************************
 //
@@ -394,27 +393,78 @@ io.on('connection', function (socket) {
     socket.on('senMessageByEmail', function (mes) {
         console.log("senMessageByEmail");
         console.log(mes);
-        //mailsender.notify(mes.message);
+        mailsender.notify(mes.message);
+    });
 
 
-        backuper.createBackup({
-            filepath : "./dbdata/checks.db"
-            , filename : "checks.db"
-            , resultname : "dbdata/test.zip"
-        })
+    socket.on('senFullBackupByEmail', function (mes) {
+        console.log("senFullBackupByEmail");
+        console.log(mes);
 
+        var cnf = tooler.prepareFullBackupConfig();
+        backuper.createBackup(cnf);
 
-        mes.text = mes.message;
-        mes.path = "dbdata/test.zip";
-        mes.name = "test.zip";
+        console.log("senFullBackupByEmail send backup by email");
+
+        mes.text = "Полный бэкап базы";
+        mes.path = cnf.resultname;
+        mes.name = cnf.backupname;
         mailsender.sendbackup(mes);
     });
 
+
 });
 
-///////////////////////////////////////
-//***********************************************************
-//***********************************************************
+//**********************************************************
+//**********************************************************
+//
+//   H E L P E R    A N D    U T I L S
+//
+//**********************************************************
+//**********************************************************
+
+var tooler = {
+    prepareFullBackupConfig: function () {
+
+        var now = new Date();
+
+        var backuppath = "backups/";
+        var backupname = "backup-" +
+            now.getFullYear() + "-" +
+            (now.getMonth() + 1) + "-" +
+            now.getUTCDate() + "-" +
+            now.getHours() + "-" +
+            now.getMinutes() + ".zip";
+
+        var dbconf = require("./mymodules/dbconf.json");
+
+        var configforbackuper = {
+            files: []
+            , resultname: backuppath + backupname
+            , backupname : backupname
+        };
+
+        for (var i in dbconf.dblist) {
+            for (var f in dbconf.dblist[i]) {
+                configforbackuper.files.push({
+                    name: dbconf.dblist[i][f]
+                    , path: dbconf.rootdir + dbconf.dblist[i][f]
+                })
+            }
+            ;
+        }
+        ;
+        return configforbackuper;
+    }
+}
+
+//**********************************************************
+//**********************************************************
+//
+//   T I M E R S
+//
+//**********************************************************
+//**********************************************************
 
 
 var fs = require('fs');

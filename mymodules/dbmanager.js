@@ -10,26 +10,15 @@ var dbconf = require("./dbconf.json");
 var db_manager = {
     drinks: {}
     , init : function (){
-        this.drinks = new Datastore(dbconf.rootdir + dbconf.drinksdb);
-        this.drinks.loadDatabase();
-        this.checks = new Datastore(dbconf.rootdir + dbconf.checksdb);
-        this.checks.loadDatabase();
-        this.groups = new Datastore(dbconf.rootdir + dbconf.groupsdb);
-        this.groups.loadDatabase();
-
-        this.ingridients = new Datastore(dbconf.rootdir + dbconf.ingidientsdb);
-        this.ingridients.loadDatabase();
-        this.ingridientsmass = new Datastore(dbconf.rootdir + dbconf.ingridientsmassdb);
-        this.ingridientsmass.loadDatabase();
-
-        this.kassaoper = new Datastore(dbconf.rootdir + dbconf.kassaoperdb);
-        this.kassaoper.loadDatabase();
-        this.kassa = new Datastore(dbconf.rootdir + dbconf.kassadb);
-        this.kassa.loadDatabase();
-
-        this.config = new Datastore(dbconf.rootdir + dbconf.configdb);
-        this.config.loadDatabase();
-
+        var dbm = this;
+        for (var i in dbconf.dblist){
+            //console.log('dbconf.dblist [' + i + '] = ',dbconf.dblist[i]);
+            for (var f in dbconf.dblist[i]){
+               //console.log('f = ',f);
+                dbm[f] = new Datastore(dbconf.rootdir + dbconf.dblist[i][f]);
+                dbm[f].loadDatabase();
+            }
+        }
     }
 }
 

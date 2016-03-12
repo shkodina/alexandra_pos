@@ -14,11 +14,11 @@ angular.module('configurator', [
             getSocket: function () {
                 return socket;
             }
-            , getNewParam : function(){
+            , getNewParam: function () {
                 return {
-                    name : ""
-                    , key : ""
-                    , value : null
+                    name: ""
+                    , key: ""
+                    , value: null
                 }
             }
         }
@@ -37,40 +37,43 @@ angular.module('configurator', [
         main.title = 'Bubble Maker';
         main.newparam = null;
         main.paramlist = [];
-        main
 
-        valueService.getSocket().on('setAllConfigParams', function(mes){
+        valueService.getSocket().on('setAllConfigParams', function (mes) {
             main.paramlist = mes;
             $scope.$apply();
-        })
+        });
 
-        main.createNewParam = function(){
+        main.createNewParam = function () {
             main.newparam = valueService.getNewParam();
-        }
+        };
 
-        main.addNewParamToDB = function(){
+        main.addNewParamToDB = function () {
             valueService.getSocket().emit('addNewConfigParamToDB', main.newparam);
             main.cancelNewParamToDB();
             valueService.getSocket().emit('getAllConfigParams', 0);
-        }
+        };
 
-        main.updateConfigParamToDB = function(param){
-            var newvalue = prompt("Новое значение для параметра " + param.name, param.value);
-            param.value = newvalue;
+        main.updateConfigParamToDB = function (param) {
+            param.value = prompt("Новое значение для параметра " + param.name, param.value);
             valueService.getSocket().emit('updateConfigParamToDB', param);
             valueService.getSocket().emit('getAllConfigParams', 0);
-        }
+        };
 
 
-
-        main.cancelNewParamToDB = function(){
+        main.cancelNewParamToDB = function () {
             main.newparam = null;
-        }
+        };
 
-        main.senMessageByEmail = function(){
+        main.senMessageByEmail = function () {
             var message = prompt("Введите текст для тестового письма");
-            valueService.getSocket().emit('senMessageByEmail', {message : message});
-        }
+            valueService.getSocket().emit('senMessageByEmail', {message: message});
+        };
+
+        main.senFullBackupByEmail = function () {
+            valueService.getSocket().emit('senFullBackupByEmail', {});
+        };
+
+
     })
     //------------------------------------------------------------------
     //------------------------------------------------------------------
