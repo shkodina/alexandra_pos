@@ -207,6 +207,8 @@ var saleserver = {
 
 
     , updateIngridient: function (ingr) {
+        //console.log ('updateIngridient: function (ingr)', ingr);
+
         if ('$$hashKey' in ingr){
             delete ingr['$$hashKey'];
         }

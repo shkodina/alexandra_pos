@@ -7,6 +7,7 @@
         <th>Название</th>
         <th>Мера</th>
         <th>Количество</th>
+        <th>Минимум</th>
         <th>Оценка</th>
         <th></th>
     </tr>
@@ -18,6 +19,7 @@
         <td ng-click='main.setIngridientForDrink(ingridient)'>{{ingridient.name}}</td>
         <td>{{ingridient.mass}}</td>
         <td>{{ingridient.count}}</td>
+        <td>{{ingridient.limit}}</td>
         <td>Достаточно</td>
         <td>
             <button class="btn btn-success btn-xs" ng-click='main.setIngridientForDrink(ingridient)'><i class="fa fa-check"></i></button>

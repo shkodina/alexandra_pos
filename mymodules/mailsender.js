@@ -33,7 +33,7 @@ var mailsender = {
             , subject: "Уведомление от системы учета"
             , attachment:
                 [
-                    {   data:"<html><h2>" + messagetosend + "</h2></html>"
+                    {   data:"<html>" + messagetosend + "</html>"
                         , alternative:true}
                    /* , {path:"dbdata/checks.db",
                        type:"text",

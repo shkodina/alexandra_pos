@@ -291,6 +291,7 @@ var myapp = {
             socket.on('addIngridientToDB', function (mes) {
                 console.log('ask add new ing to DB');
                 console.log(mes);
+                mes.notifed = false;
                 saleserver.addIngridient(mes);
             });
 
@@ -303,6 +304,7 @@ var myapp = {
             socket.on('updateIngridientInDB', function (mes) {
                 console.log('ask update ingridient in DB');
                 console.log(mes);
+                mes.notifed = false;
                 saleserver.updateIngridient(mes);
             });
 
@@ -444,15 +446,15 @@ var myapp = {
                 console.log(mes);
 
 
-                 var cnf = tooler.prepareOperDBBackupConfig();
-                 backuper.createBackup(cnf);
+                var cnf = tooler.prepareOperDBBackupConfig();
+                backuper.createBackup(cnf);
 
-                 console.log("getOperBackup send backup by email");
+                console.log("getOperBackup send backup by email");
 
-                 mes.text = "Оперативный бэкап базы";
-                 mes.path = cnf.resultname;
-                 mes.name = cnf.backupname;
-                 mailsender.sendbackup(mes);
+                mes.text = "Оперативный бэкап базы";
+                mes.path = cnf.resultname;
+                mes.name = cnf.backupname;
+                mailsender.sendbackup(mes);
 
 
                 if (mes.needdeletedbfiles) {
@@ -571,7 +573,7 @@ var myapp = {
 
                 var dbconf = require("./mymodules/dbconf.json");
 
-                var pushToFiles = function(item, name){
+                var pushToFiles = function (item, name) {
                     var file = {
                         name: item[name]
                         , path: dbconf.rootdir + item[name]
@@ -581,7 +583,7 @@ var myapp = {
 
                 for (var i in dbconf.dblist) {
                     if ("kassaoper" in dbconf.dblist[i]) {
-                        pushToFiles(dbconf.dblist[i],"kassaoper");
+                        pushToFiles(dbconf.dblist[i], "kassaoper");
                     }
                     if ("kassa" in dbconf.dblist[i]) {
                         pushToFiles(dbconf.dblist[i], "kassa");
@@ -592,8 +594,64 @@ var myapp = {
                 }
 
 
-
                 return configforbackuper;
+            }
+        }
+
+//**********************************************************
+//**********************************************************
+//
+//   N O T I F I C A T O R
+//
+//**********************************************************
+//**********************************************************
+
+        var notificator = {
+
+            checkIngridients: function (mailsender, saleserver) {
+
+                //console.log('checkIngridients');
+
+                saleserver.getAllIngridients(function (ingrlist) {
+                    var ingridientslowcount = new Array;
+                    for (var i in ingrlist) {
+                        if ((+(ingrlist[i].count)) <= (+(ingrlist[i].limit))) {
+                            //console.log('checkIngridients find to notify = ', ingrlist[i]);
+                            if (ingrlist[i].notifed != true) {
+                                ingrlist[i].notifed = true;
+                                ingridientslowcount.push(ingrlist[i]);
+                            }
+                        }
+                    }
+
+                    //console.log('ingridientslowcount.length  = ', ingridientslowcount.length );
+                    if (ingridientslowcount.length  == 0){
+                        return;
+                    }
+
+                    var message = "<p>Следующий набор ингридиентов требует пополнения:</p>";
+                    for (var i2 in ingridientslowcount) {
+                        message = message
+                                + "<p>"
+                            + ingridientslowcount[i2].name
+                            + ": <strong>остаток : "
+                            + ingridientslowcount[i2].count
+                            + " "
+                            + ingridientslowcount[i2].mass
+                            + "</strong></p>"
+                    }
+                    //console.log('checkIngridients message = ', message);
+
+                    mailsender.notify(message);
+                    //console.log('checkIngridients message send ');
+
+                    ingridientslowcount.forEach(function (ing) {
+                        //console.log('checkIngridients try update ingridient ', ing.name);
+                        saleserver.updateIngridient(ing);
+                    });
+                    //console.log('checkIngridients updateIngridient fifnished ');
+
+                })
             }
         }
 
@@ -610,13 +668,15 @@ var myapp = {
 
         setInterval(function () {
 
+
             try {
-                ;
+                notificator.checkIngridients(mailsender, saleserver);
             } catch (error) {
-                ;
+                console.log("catch error: ", error);
             }
 
-        }, 1000);
+        }, 20 * 60 * 1000); // per 20 minutes
+        //},  60 * 1000); // per 1 minutes
 
         module.exports = app;
 

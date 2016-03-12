@@ -35,6 +35,7 @@ angular.module('admindrinks', [
                     , mass: 'g'
                     , type : {}
                     , count: "1000"
+                    , limit : 1
                 }
             }
         }
@@ -70,7 +71,7 @@ angular.module('admindrinks', [
         main.curlist = {};
 
         valueService.getSocket().on('setAdminListFromDB', function (mes) {
-            console.log("get drinks list from db");
+            //console.log("get drinks list from db");
             mes.forEach(function(item){
                 console.log('group = ', item);
             })
@@ -121,16 +122,16 @@ angular.module('admindrinks', [
         main.ingridientsmassfromdb = {};
 
         valueService.getSocket().on('setAllIngridientsFromDB', function(mes){
-            console.log("get ingridients from DB");
-            console.log(mes);
+            //console.log("get ingridients from DB");
+            //console.log(mes);
 
             main.ingridientsfromdb = mes;
             $scope.$apply();
         });
 
         valueService.getSocket().on('setAllIngridientsMassFromDB', function(mes){
-            console.log("get ingridients mass from DB");
-            console.log(mes);
+            //console.log("get ingridients mass from DB");
+            //console.log(mes);
 
             main.ingridientsmassfromdb = mes;
         });
@@ -165,8 +166,8 @@ angular.module('admindrinks', [
 
 
         valueService.getSocket().on('setGroupsFromDB', function(mes){
-            console.log("get groups from db");
-            console.log(mes);
+            //console.log("get groups from db");
+            //console.log(mes);
             main.groups = mes;
 
             mes.forEach(function(item){
@@ -208,7 +209,7 @@ angular.module('admindrinks', [
         main.addNewIngngridientToDB = function(){
 
             if("_id" in main.ingridientnewfordb) {
-                alert("try update ingridient");
+                //alert("try update ingridient : " + main.ingridientnewfordb.name);
                 valueService.getSocket().emit('updateIngridientInDB', main.ingridientnewfordb);
                 main.ingridientnewfordb = null;
                 valueService.getSocket().emit('getAllIngridientsFromDB', 0);
@@ -235,7 +236,7 @@ angular.module('admindrinks', [
         };
 
         main.setIngridientForDelete = function(ingr){
-            alert("try delete ingridient " + ingr.name);
+            //alert("try delete ingridient " + ingr.name);
             valueService.getSocket().emit('deleteIngridientFromDB', ingr);
             main.ingridientnewfordb = null;
             valueService.getSocket().emit('getAllIngridientsFromDB', 0);
