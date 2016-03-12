@@ -3,3 +3,4 @@
 {"name":"Адрес исходящей почты","key":"emailfrom","value":"alexbubblemaker@outlook.com","_id":"eT1L5rgyIl1Sde5h"}
 {"name":"Имя пользователя","key":"username","value":"user","_id":"geWNmPEnY0U45SrU"}
 {"name":"Пароль исходящей почты","key":"emailfrompass","value":"B!u!bb1Ma_ker","_id":"oKgCIKOExP0fCci4"}
+{"name":"Адрес получателя уведомлений","key":"emailto","value":"blobby@yandex.ru, alexa_40@mail.ru","_id":"BvVpi891XRUPKuRY"}

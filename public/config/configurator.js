@@ -74,6 +74,9 @@ angular.module('configurator', [
         };
 
 
+        main.sendCommandToServerForRestart = function(){
+            valueService.getSocket().emit('sendCommandToServerForRestart', {});
+        }
     })
     //------------------------------------------------------------------
     //------------------------------------------------------------------
@@ -106,6 +109,11 @@ angular.module('configurator', [
     .directive('createnewparam', function () {
         return {
             templateUrl: 'createnewparam.tmpl.html'
+        }
+    })
+    .directive('backupactions', function () {
+        return {
+            templateUrl: 'backupactions.tmpl.html'
         }
     })
 
