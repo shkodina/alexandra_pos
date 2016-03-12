@@ -11,6 +11,11 @@ if (cluster.isMaster) {
         console.log("server die once, worker", worker);
         console.log("server die once, code", code);
         console.log("server die once, signal", signal);
+
+        if (code == 66){
+            console.log("DB FILES WERE DELETED!!!");
+            console.log("PREPARE FOR SOMETHING TERRABLE!!!");
+        }
         cluster.fork();
     });
 }

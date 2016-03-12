@@ -1,8 +1,9 @@
 <h3>Работа с бэкапами</h3>
 
-<button type="button" class="btn btn-theme03" ng-click="main.senMessageByEmail()">Послать тестовое письмо</button>
+<button type="button" class="btn btn-theme03" ng-click="main.senMessageByEmail()">Письмо от системы</button>
 <button type="button" class="btn btn-theme03" ng-click="main.senFullBackupByEmail()">Послать полный бэкап на почту</button>
 <button type="button" class="btn btn-theme03" ng-click="main.askFullListOfBackupsFromServer()">Запросить список бэкапов</button>
+<button type="button" class="btn btn-theme03" ng-click="main.getOperBackup()">Оперативный бэкап с обновлением</button>
 
 <table class="table table-striped table-advance table-hover" ng-if="main.backuplist">
     <hr>
@@ -18,6 +19,7 @@
         <td>{{param}}</td>
         <td>-</td>
         <td>
+            <button class="btn btn-success btn-xs" ng-click="main.sendOldBackupToEmail(param)"><i class="fa fa-check"></i></button>
             <button class="btn btn-primary btn-xs" ng-click="main.deleteBackup(param)"><i class="fa fa-trash-o "></i></button>
         </td>
     </tr>

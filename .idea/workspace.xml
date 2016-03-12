@@ -4,7 +4,11 @@
     <list default="true" id="6a3977de-6a97-4d2b-9a84-652ada34cb6c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/config.db" afterPath="$PROJECT_DIR$/dbdata/config.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/checks.db" afterPath="$PROJECT_DIR$/dbdata/checks.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/ingridients.db" afterPath="$PROJECT_DIR$/dbdata/ingridients.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/kassa.db" afterPath="$PROJECT_DIR$/dbdata/kassa.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/kassaoper.db" afterPath="$PROJECT_DIR$/dbdata/kassaoper.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forliveforever.js" afterPath="$PROJECT_DIR$/forliveforever.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/config/backupactions.tmpl.html" afterPath="$PROJECT_DIR$/public/config/backupactions.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/config/configurator.js" afterPath="$PROJECT_DIR$/public/config/configurator.js" />
     </list>
@@ -30,18 +34,8 @@
       <file leaf-file-name="backupactions.tmpl.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/config/backupactions.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inform.tmpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/config/inform.tmpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="83" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
+            <state vertical-scroll-proportion="-4.8461537">
+              <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -50,18 +44,8 @@
       <file leaf-file-name="configurator.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/config/configurator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44662923">
-              <caret line="88" column="11" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5702247">
+              <caret line="111" column="53" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -104,7 +88,6 @@
         <option value="$PROJECT_DIR$/dbdata/drinks.db" />
         <option value="$PROJECT_DIR$/dbdata/groups.db" />
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/dbdata/checks.db" />
         <option value="$PROJECT_DIR$/dbdata/ingridients.db" />
         <option value="$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html" />
         <option value="$PROJECT_DIR$/dbdata/kassa.db" />
@@ -126,12 +109,13 @@
         <option value="$PROJECT_DIR$/public/admin/index.html" />
         <option value="$PROJECT_DIR$/public/main/index.html" />
         <option value="$PROJECT_DIR$/mymodules/backuper.js" />
-        <option value="$PROJECT_DIR$/forliveforever.js" />
         <option value="$PROJECT_DIR$/public/config/index.html" />
         <option value="$PROJECT_DIR$/public/config/inform.tmpl.html" />
         <option value="$PROJECT_DIR$/public/config/configparams.tmpl.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/config/backupactions.tmpl.html" />
+        <option value="$PROJECT_DIR$/forliveforever.js" />
+        <option value="$PROJECT_DIR$/dbdata/checks.db" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/config/configurator.js" />
       </list>
@@ -492,13 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/drinks.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbdata/groups.db">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -511,13 +488,6 @@
         <state vertical-scroll-proportion="0.33333334">
           <caret line="787" column="7" selection-start-line="787" selection-start-column="5" selection-end-line="787" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/checks.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -553,13 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33055556">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/kassaoper.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27345845">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -630,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/kassa.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048850574">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saleserver.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44863012">
@@ -669,14 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4747191">
           <caret line="198" column="9" selection-start-line="198" selection-start-column="9" selection-end-line="198" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/config.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05151515">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -749,28 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forliveforever.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/config/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.5">
           <caret line="76" column="38" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/inform.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="83" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
           <folding />
         </state>
       </provider>
@@ -783,34 +713,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/configparams.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/public/config/inform.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.669697">
-          <caret line="28" column="8" selection-start-line="5" selection-start-column="0" selection-end-line="28" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.05151515">
+          <caret line="1" column="83" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/backupactions.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/forliveforever.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config/configparams.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1538463">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/drinks.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/kassa.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/kassaoper.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="91" selection-start-line="0" selection-start-column="78" selection-end-line="0" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/checks.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="299" selection-start-line="0" selection-start-column="286" selection-end-line="0" selection-end-column="299" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.58426964">
+          <caret line="476" column="25" selection-start-line="476" selection-start-column="25" selection-end-line="476" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/config.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05151515">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config/backupactions.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8461537">
+          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/config/configurator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44662923">
-          <caret line="88" column="11" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.5702247">
+          <caret line="111" column="53" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
           <folding />
         </state>
       </provider>

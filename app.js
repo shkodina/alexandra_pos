@@ -426,7 +426,7 @@ var myapp = {
                 var files = fs.readdirSync('./backups');
                 console.log(files);
 
-                socket.emit('setFullListOfBackupsFromServer', {list : files});
+                socket.emit('setFullListOfBackupsFromServer', {list: files});
             });
 
 
@@ -438,6 +438,61 @@ var myapp = {
                 fs.unlinkSync('./backups/' + mes.name);
 
             });
+
+            socket.on('getOperBackup', function (mes) {
+                console.log("getOperBackup");
+                console.log(mes);
+
+
+                 var cnf = tooler.prepareOperDBBackupConfig();
+                 backuper.createBackup(cnf);
+
+                 console.log("getOperBackup send backup by email");
+
+                 mes.text = "Оперативный бэкап базы";
+                 mes.path = cnf.resultname;
+                 mes.name = cnf.backupname;
+                 mailsender.sendbackup(mes);
+
+
+                if (mes.needdeletedbfiles) {
+                    console.log("getOperBackup ask delete files");
+                    console.log("getOperBackup delete files");
+
+                    var dbconf = require("./mymodules/dbconf.json");
+                    var fs = require('fs');
+                    console.log(dbconf);
+                    for (var i in dbconf.dblist) {
+                        if ("kassaoper" in dbconf.dblist[i]) {
+                            console.log("found kassaoper = ", dbconf.dblist[i].kassaoper);
+                            var fullpath = dbconf.rootdir + dbconf.dblist[i].kassaoper;
+                            console.log("fullpath = ", fullpath);
+                            fs.unlinkSync(fullpath);
+                        }
+                        if ("checks" in dbconf.dblist[i]) {
+                            console.log("found checks = ", dbconf.dblist[i].checks);
+                            var fullpath = dbconf.rootdir + dbconf.dblist[i].checks;
+                            console.log("fullpath = ", fullpath);
+                            fs.unlinkSync(fullpath);
+                        }
+                    }
+
+                    console.log("getOperBackup restart server");
+                    process.exit(66);
+                }
+            });
+
+            socket.on('sendOldBackupToEmail', function (mes) {
+                console.log("sendOldBackupToEmail");
+                console.log(mes);
+
+                mes.text = "Повторный заказанный бэкап";
+                mes.path = "./backups/" + mes.name;
+                mes.name = mes.name;
+                mailsender.sendbackup(mes);
+            });
+
+
             //**********************************************************
             //**********************************************************
             //
@@ -450,7 +505,7 @@ var myapp = {
                 console.log("sendCommandToServerForRestart");
                 console.log(mes);
 
-                global.exit(1);
+                process.exit(1);
             });
 
         });
@@ -494,6 +549,50 @@ var myapp = {
                     ;
                 }
                 ;
+                return configforbackuper;
+            }
+            , prepareOperDBBackupConfig: function () {
+
+                var now = new Date();
+
+                var backuppath = "backups/";
+                var backupname = "backup-oper-" +
+                    now.getFullYear() + "-" +
+                    (now.getMonth() + 1) + "-" +
+                    now.getUTCDate() + "-" +
+                    now.getHours() + "-" +
+                    now.getMinutes() + ".zip";
+
+                var configforbackuper = {
+                    files: []
+                    , resultname: backuppath + backupname
+                    , backupname: backupname
+                };
+
+                var dbconf = require("./mymodules/dbconf.json");
+
+                var pushToFiles = function(item, name){
+                    var file = {
+                        name: item[name]
+                        , path: dbconf.rootdir + item[name]
+                    };
+                    configforbackuper.files.push(file);
+                };
+
+                for (var i in dbconf.dblist) {
+                    if ("kassaoper" in dbconf.dblist[i]) {
+                        pushToFiles(dbconf.dblist[i],"kassaoper");
+                    }
+                    if ("kassa" in dbconf.dblist[i]) {
+                        pushToFiles(dbconf.dblist[i], "kassa");
+                    }
+                    if ("checks" in dbconf.dblist[i]) {
+                        pushToFiles(dbconf.dblist[i], "checks");
+                    }
+                }
+
+
+
                 return configforbackuper;
             }
         }

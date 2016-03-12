@@ -76,6 +76,7 @@ angular.module('configurator', [
 
         main.sendCommandToServerForRestart = function () {
             valueService.getSocket().emit('sendCommandToServerForRestart', {});
+            alert("Сервер будет перезагружен! Перезазгрузите страницу...");
         }
 
         main.askFullListOfBackupsFromServer = function () {
@@ -93,6 +94,24 @@ angular.module('configurator', [
                 valueService.getSocket().emit('deleteBackupFromServer', {name : item});
                 valueService.getSocket().emit('askFullListOfBackupsFromServer', {});
             }
+        }
+
+        main.getOperBackup = function(){
+            var needdeletedbfiles = confirm("Удалить старые файлы после бекапа?")
+            valueService.getSocket().emit('getOperBackup', {
+                needdeletedbfiles : needdeletedbfiles
+            });
+            valueService.getSocket().emit('askFullListOfBackupsFromServer', {});
+        }
+
+        main.sendOldBackupToEmail = function(item){
+            if(confirm("Вы точно хотите запросить файл: " + item)){
+                valueService.getSocket().emit('sendOldBackupToEmail', {
+                    name : item
+                });
+                alert("Бэкап будет выслан на почту");
+            }
+
         }
     })
     //------------------------------------------------------------------
