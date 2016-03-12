@@ -418,6 +418,26 @@ var myapp = {
             });
 
 
+            socket.on('askFullListOfBackupsFromServer', function (mes) {
+                console.log("askFullListOfBackupsFromServer");
+                console.log(mes);
+
+                var fs = require('fs');
+                var files = fs.readdirSync('./backups');
+                console.log(files);
+
+                socket.emit('setFullListOfBackupsFromServer', {list : files});
+            });
+
+
+            socket.on('deleteBackupFromServer', function (mes) {
+                console.log("deleteBackupFromServer");
+                console.log(mes);
+
+                var fs = require('fs');
+                fs.unlinkSync('./backups/' + mes.name);
+
+            });
             //**********************************************************
             //**********************************************************
             //

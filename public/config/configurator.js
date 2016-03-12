@@ -74,8 +74,25 @@ angular.module('configurator', [
         };
 
 
-        main.sendCommandToServerForRestart = function(){
+        main.sendCommandToServerForRestart = function () {
             valueService.getSocket().emit('sendCommandToServerForRestart', {});
+        }
+
+        main.askFullListOfBackupsFromServer = function () {
+            valueService.getSocket().emit('askFullListOfBackupsFromServer', {});
+        }
+
+        main.backuplist = null;
+        valueService.getSocket().on('setFullListOfBackupsFromServer', function (mes) {
+            main.backuplist = mes.list;
+            $scope.$apply();
+        });
+
+        main.deleteBackup = function(item){
+            if(confirm("Вы точно хотите удалить файл: " + item)){
+                valueService.getSocket().emit('deleteBackupFromServer', {name : item});
+                valueService.getSocket().emit('askFullListOfBackupsFromServer', {});
+            }
         }
     })
     //------------------------------------------------------------------
