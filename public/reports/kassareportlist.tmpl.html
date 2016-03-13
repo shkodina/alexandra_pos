@@ -1,0 +1,39 @@
+
+
+<h3>Операции по кассе</h3>
+<h4>Сейчас в кассе: {{main.curmoney}}</h4>
+
+<!--
+<button type="button" class="btn btn-theme03" ng-click="main.senMessageByEmail()">Письмо от системы</button>
+<button type="button" class="btn btn-theme03" ng-click="main.senFullBackupByEmail()">Послать полный бэкап на почту</button>
+<button type="button" class="btn btn-theme03" ng-click="main.askFullListOfBackupsFromServer()">Запросить список бэкапов</button>
+<button type="button" class="btn btn-theme03" ng-click="main.getOperBackup()">Оперативный бэкап с обновлением</button>
+-->
+
+<table class="table table-striped table-advance table-hover">
+    <hr>
+    <thead>
+    <tr>
+        <th>Дата/Время</th>
+        <th>Сумма (рубли)</th>
+        <th>Операция</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="oper in main.kassareportlist" ng-click="main.kassaReportDetale(oper)">
+        <td>{{oper.money.date}}</td>
+        <td>{{oper.money.count}}</td>
+        <td>{{main.getKassaOperType(oper.type)}}</td>
+
+
+
+        <td>
+            <button class="btn btn-success btn-xs" ng-click="main.kassaReportDetale(oper)"><i class="fa fa-check"></i></button>
+            <!--
+                        <button class="btn btn-primary btn-xs" ng-click="main.deleteBackup(param)"><i class="fa fa-trash-o "></i></button>
+            -->
+        </td>
+    </tr>
+
+    </tbody>
+</table>

@@ -1,1 +1,7 @@
+{"type":"add_by_check","money":{"date":"2016-03-13T09:16:37.373Z","timestamp":1457860597373,"count":150},"_id":"AUklP91q3LUd5DVZ"}
+{"type":"add_manual","money":{"date":"2016-03-13T09:29:01.316Z","timestamp":1457861341316,"count":"2000","reason":"разменная мелочь для сдачи"},"_id":"JSQkxbyMeWCfcbMm"}
+{"type":"add_by_check","money":{"date":"2016-03-13T09:18:54.321Z","timestamp":1457860734321,"count":260},"_id":"PoZMsCWeSTSAR8Xy"}
+{"type":"add_by_check","money":{"date":"2016-03-13T09:16:31.677Z","timestamp":1457860591677,"count":300},"_id":"dxlxiJ1fxIgZvrTw"}
 {"type":"add_by_check","money":{"date":"2016-03-12T18:07:01.435Z","timestamp":1457806021435,"count":120},"_id":"h3ivg9MaWoy3URDo"}
+{"type":"get_manual","money":{"date":"2016-03-13T09:28:44.329Z","timestamp":1457861324329,"count":"310","reason":"Забрали для ровной суммы в кассе"},"_id":"iAReVVo5NLxHbawd"}
+{"type":"add_by_check","money":{"date":"2016-03-13T09:16:42.480Z","timestamp":1457860602480,"count":80},"_id":"ue4suv6706qmj2I7"}

@@ -29,7 +29,6 @@ var saleserver = {
     },
 
 
-
     getAllDrinksByType: function (drink_type, sender) {
         if (drink_type == null) {
             db_manager.drinks.find({}).sort({
@@ -50,7 +49,6 @@ var saleserver = {
         }
 
     },
-
 
 
     deleteDrink: function (drink) {
@@ -305,8 +303,8 @@ var saleserver = {
     }
 
     , updateConfigParamToDB : function(param){
-        console.log('updateConfigParamToDB');
-        console.log(param);
+       // console.log('updateConfigParamToDB');
+       // console.log(param);
 
         db_manager.config.update( { _id : param._id }, {$set : {value : param.value}}, {},function(err, num){
             if (err != null) {
@@ -333,6 +331,47 @@ var saleserver = {
             sender(docs);
         });
     }
+
+
+    //**********************************************************
+    //**********************************************************
+    //
+    //    R E P O R T E R
+    //
+    //**********************************************************
+    //**********************************************************
+
+    , getReportAllChecks : function(sender){
+         console.log('getReportAllChecks from db');
+        db_manager.checks.find({}).sort({
+            timestamp: 1
+        }).exec(function (err, docs) {
+            sender(docs);
+        });
+    }
+
+    , getReportAllKassaOper : function(sender){
+         console.log('getReportAllKassaOper from db');
+        db_manager.kassaoper.find({}).sort({
+            timestamp: 1
+        }).exec(function (err, docs) {
+            sender(docs);
+        });
+    }
+
+    , getCheckByDate : function(date, sender){
+         console.log('getReportAllKassaOper from db');
+        db_manager.checks.find({date : date}).sort({
+            timestamp: 1
+        }).exec(function (err, docs) {
+            sender(docs);
+        });
+    }
+
+
+
+
+
 }
 
 module.exports = saleserver;

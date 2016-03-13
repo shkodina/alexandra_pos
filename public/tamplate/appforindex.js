@@ -1,4 +1,4 @@
-angular.module('configurator', [
+angular.module('appforindex', [
         'ui.router',
         'ngAnimate',
         'ngMessages'
@@ -41,9 +41,9 @@ angular.module('configurator', [
     //------------------------------------------------------------------
     //------------------------------------------------------------------
 
-    .directive('configparams', function () {
+    .directive('workform', function () {
         return {
-            templateUrl: 'configparams.tmpl.html'
+            templateUrl: 'workform.tmpl.html'
         }
     })
     .directive('inform', function () {

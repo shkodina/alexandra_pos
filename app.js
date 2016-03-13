@@ -392,7 +392,7 @@ var myapp = {
             //**********************************************************
             //**********************************************************
             //
-            //   M A I L S E N D E R
+            //   M A I L S E N D E R   A N D    B A C K U P E R
             //
             //**********************************************************
             //**********************************************************
@@ -509,6 +509,43 @@ var myapp = {
 
                 process.exit(1);
             });
+
+            //**********************************************************
+            //**********************************************************
+            //
+            //   R E P O R T E R
+            //
+            //**********************************************************
+            //**********************************************************
+
+            socket.on('getReportAllChecks', function (mes) {
+                console.log("getReportAllChecks");
+                console.log(mes);
+                saleserver.getReportAllChecks(function (checks) {
+                    socket.emit('setReportAllChecks', checks);
+                });
+
+            });
+
+            socket.on('getReportAllKassaOper', function (mes) {
+                console.log("getReportAllKassaOper");
+                console.log(mes);
+                saleserver.getReportAllKassaOper(function (checks) {
+                    socket.emit('setReportAllKassaOper', checks);
+                });
+
+            });
+
+            socket.on('getCheckByDate', function (date) {
+                console.log("getCheckByDate");
+                console.log(date);
+                saleserver.getCheckByDate(date, function (checks) {
+                    socket.emit('setCheckByDate', checks);
+                });
+
+            });
+
+
 
         });
 
