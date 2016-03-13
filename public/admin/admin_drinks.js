@@ -17,13 +17,13 @@ angular.module('admindrinks', [
             }
             , getDrink: function () {
                 return {
-                    type: "тип напитка"
-                    , name: "название напитка"
+                    type: "тип"
+                    , name: "название"
                     , price: "100"
                     , ingredients: null
                 }
             }
-              , getNewGroup: function () {
+            , getNewGroup: function () {
                 return {
                     type: "newgroup"
                     , name: "Новая группа"
@@ -33,9 +33,9 @@ angular.module('admindrinks', [
                 return {
                     name: null
                     , mass: 'g'
-                    , type : {}
+                    , type: {}
                     , count: "1000"
-                    , limit : 1
+                    , limit: 1
                 }
             }
         }
@@ -54,11 +54,6 @@ angular.module('admindrinks', [
         main.title = 'Bubble Maker';
 
 
-
-
-
-
-
         //------------------------------------------------------------------
         //------------------------------------------------------------------
         //
@@ -72,7 +67,7 @@ angular.module('admindrinks', [
 
         valueService.getSocket().on('setAdminListFromDB', function (mes) {
             //console.log("get drinks list from db");
-            mes.forEach(function(item){
+            mes.forEach(function (item) {
                 console.log('group = ', item);
             })
             main.curlist = mes;
@@ -87,7 +82,7 @@ angular.module('admindrinks', [
         };
 
         main.addCurDrinkToDB = function () {
-            if (main.curgroup == null){
+            if (main.curgroup == null) {
                 alert("Выбери группу, куда добавить");
                 return;
             }
@@ -98,7 +93,7 @@ angular.module('admindrinks', [
             main.curdrink.type = main.curgroup.type;
         };
 
-        main.deleteCurDrinkFromDB = function(){
+        main.deleteCurDrinkFromDB = function () {
             valueService.getSocket().emit('deleteCurDrinkFromDB', main.curdrink);
             valueService.getSocket().emit('updateAdminFromDB', {type: main.curdrink.type});
             main.curdrink = valueService.getDrink();
@@ -121,7 +116,7 @@ angular.module('admindrinks', [
         main.ingridientsfromdb = {};
         main.ingridientsmassfromdb = {};
 
-        valueService.getSocket().on('setAllIngridientsFromDB', function(mes){
+        valueService.getSocket().on('setAllIngridientsFromDB', function (mes) {
             //console.log("get ingridients from DB");
             //console.log(mes);
 
@@ -129,7 +124,7 @@ angular.module('admindrinks', [
             $scope.$apply();
         });
 
-        valueService.getSocket().on('setAllIngridientsMassFromDB', function(mes){
+        valueService.getSocket().on('setAllIngridientsMassFromDB', function (mes) {
             //console.log("get ingridients mass from DB");
             //console.log(mes);
 
@@ -146,7 +141,7 @@ angular.module('admindrinks', [
             main.ingridient = valueService.getIngridient();
         };
 
-        main.setIngridientForDrink = function(ingrfromdb){
+        main.setIngridientForDrink = function (ingrfromdb) {
             main.ingridient = ingrfromdb;
         };
 
@@ -165,31 +160,42 @@ angular.module('admindrinks', [
         main.newgroup = null;
 
 
-        valueService.getSocket().on('setGroupsFromDB', function(mes){
+        valueService.getSocket().on('setGroupsFromDB', function (mes) {
             //console.log("get groups from db");
             //console.log(mes);
             main.groups = mes;
 
-            mes.forEach(function(item){
+            mes.forEach(function (item) {
                 console.log('group = ', item);
             })
             $scope.$apply();
         });
 
-        main.needNewGroup = function(){
+        main.needNewGroup = function () {
             main.newgroup = valueService.getNewGroup();
         };
 
-        main.addGroupToDB = function(){
+        main.addGroupToDB = function () {
             valueService.getSocket().emit('addNewGroupToDB', main.newgroup);
             main.ingridientnewfordb = null;
             valueService.getSocket().emit('getAllGroupsFromDB', 0);
         };
 
-        main.cancelNewGroup = function(){
+        main.cancelNewGroup = function () {
             main.newgroup = null;
         };
 
+        main.deleteCurGroupFromDB = function () {
+            if (main.curgroup == null)
+                return;
+
+            if (confirm("Будет удалена группа " + main.curgroup.name + " и ВСЕ связанные с ней элементы!"))
+                if (confirm("Вы хорошо подумали? Точно удалить?")) {
+                    valueService.getSocket().emit('deleteCurGroupFromDB', main.curgroup);
+                    valueService.getSocket().emit('getAllGroupsFromDB', 0);
+                    main.curlist = {};
+                }
+        };
 
         //------------------------------------------------------------------
         //------------------------------------------------------------------
@@ -202,23 +208,23 @@ angular.module('admindrinks', [
         main.ingridientnewfordb = null;
         main.showallingridients = null;
 
-        main.needNewIngngridientForDB = function(){
+        main.needNewIngngridientForDB = function () {
             main.ingridientnewfordb = valueService.getIngridient();
         }
 
-        main.addNewIngngridientToDB = function(){
+        main.addNewIngngridientToDB = function () {
 
-            if("_id" in main.ingridientnewfordb) {
+            if ("_id" in main.ingridientnewfordb) {
                 //alert("try update ingridient : " + main.ingridientnewfordb.name);
                 valueService.getSocket().emit('updateIngridientInDB', main.ingridientnewfordb);
                 main.ingridientnewfordb = null;
                 valueService.getSocket().emit('getAllIngridientsFromDB', 0);
-                return ;
+                return;
             }
 
             for (var i in main.ingridientsmassfromdb) {
                 console.log
-                if (main.ingridientsmassfromdb[i].name == main.ingridientnewfordb.mass){
+                if (main.ingridientsmassfromdb[i].name == main.ingridientnewfordb.mass) {
                     main.ingridientnewfordb.type = main.ingridientsmassfromdb[i].type;
                 }
             }
@@ -227,15 +233,15 @@ angular.module('admindrinks', [
             valueService.getSocket().emit('getAllIngridientsFromDB', 0);
         };
 
-        main.cancelNewIngngridient = function(){
+        main.cancelNewIngngridient = function () {
             main.ingridientnewfordb = null;
         };
 
-        main.setIngridientForEdit = function(ingr){
+        main.setIngridientForEdit = function (ingr) {
             main.ingridientnewfordb = ingr;
         };
 
-        main.setIngridientForDelete = function(ingr){
+        main.setIngridientForDelete = function (ingr) {
             //alert("try delete ingridient " + ingr.name);
             valueService.getSocket().emit('deleteIngridientFromDB', ingr);
             main.ingridientnewfordb = null;
@@ -243,11 +249,10 @@ angular.module('admindrinks', [
         };
 
 
-
-        main.showAllIngridients = function(){
+        main.showAllIngridients = function () {
             main.showallingridients = {};
         };
-         main.hideAllIngridients = function(){
+        main.hideAllIngridients = function () {
             main.showallingridients = null;
         };
 
@@ -262,38 +267,38 @@ angular.module('admindrinks', [
         main.moneyinuse = null;
 
         main.money = {
-            date : {}
-            , timestamp : {}
-            , count : 0
-            , reason : "Просто захотелось"
+            date: {}
+            , timestamp: {}
+            , count: 0
+            , reason: "Просто захотелось"
         };
         main.curmoney = 0;
-        valueService.getSocket().on('updateManeyValueFromDB', function(mes){
+        valueService.getSocket().on('updateManeyValueFromDB', function (mes) {
             main.curmoney = mes.value;
             $scope.$apply();
         });
 
-        main.useMoney = function(){
+        main.useMoney = function () {
             main.moneyinuse = {};
             valueService.getSocket().emit('getCurrentMoneyFromKassa', 0);
         }
 
-        main.noUseMoney = function(){
+        main.noUseMoney = function () {
             main.moneyinuse = null;
         }
 
-        main.getMoneyFromKassa = function(){
+        main.getMoneyFromKassa = function () {
             main.money.date = new Date();
             main.money.timestamp = main.money.date.getTime();
-            valueService.getSocket().emit('getMoneyFromKassa',main.money);
+            valueService.getSocket().emit('getMoneyFromKassa', main.money);
             main.moneyinuse = null;
 
         };
 
-        main.addMoneyToKassa = function(){
+        main.addMoneyToKassa = function () {
             main.money.date = new Date();
             main.money.timestamp = main.money.date.getTime();
-            valueService.getSocket().emit('addMoneyToKassa',main.money);
+            valueService.getSocket().emit('addMoneyToKassa', main.money);
             main.moneyinuse = null;
         };
 

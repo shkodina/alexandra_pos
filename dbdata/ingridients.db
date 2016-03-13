@@ -1,10 +1,12 @@
-{"name":"Сахар","mass":"г","type":"g","count":9690,"_id":"0ZfAzQ12gVBT5Hem","limit":"500"}
+{"name":"Сахар","mass":"г","type":"g","count":9640,"_id":"0ZfAzQ12gVBT5Hem","limit":"500"}
+{"name":"Заварка Улунг","mass":"г","type":"g","count":1000,"limit":100,"notifed":false,"_id":"BgFhAJL1MYReRzWY"}
 {"name":"Грейпфруты","mass":"штк","type":"pice","count":45,"_id":"Ju5dIOy3s7yzCHT5","limit":"45","notifed":true}
 {"name":"Сливки","mass":"мл","type":"ml","count":"1000","_id":"LC4E2Iv1Q6AnQpnn","limit":"500","notifed":false}
 {"name":"Корица","mass":"г","type":"g","count":"1000","limit":"100","notifed":false,"_id":"LYCzuSBkHgiOFP2M"}
-{"name":"Апельсины","mass":"штк","type":"pice","count":39,"_id":"MvAli9WYjoZdxQG5","limit":"41","notifed":true}
-{"name":"Лимоны","mass":"штк","type":"pice","count":43,"_id":"bWrnZOOHCXYZN02X","limit":"10"}
+{"name":"Апельсины","mass":"штк","type":"pice","count":38,"_id":"MvAli9WYjoZdxQG5","limit":"41","notifed":true}
+{"name":"Лимоны","mass":"штк","type":"pice","count":41,"_id":"bWrnZOOHCXYZN02X","limit":"10"}
 {"name":"Заварка черная","mass":"г","type":"g","count":1995,"_id":"fbSqFZgtzEsEHJ6Y","limit":"100"}
-{"name":"Кофе","mass":"г","type":"g","count":4920,"_id":"hCfGBjlxfWVWbf9n","limit":"500"}
+{"name":"Кофе","mass":"г","type":"g","count":4880,"_id":"hCfGBjlxfWVWbf9n","limit":"500"}
 {"name":"Молоко","mass":"мл","type":"ml","count":"10000","_id":"mVskA6NtjLRZmbwt","limit":"500","notifed":true}
+{"name":"Маршмелоу","mass":"г","type":"g","count":500,"limit":100,"notifed":false,"_id":"nNNvAL6nB8ckOiBV"}
 {"name":"Морковь","mass":"штк","type":"pice","count":"50","_id":"tCxB50QQ3uKvI0Mc","limit":"10"}

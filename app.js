@@ -254,11 +254,17 @@ var myapp = {
             });
 
             socket.on('getAllGroupsFromDB', function (msg) {
-                console.log("ask all groups from db");
+                //console.log("getAllGroupsFromDB");
                 console.log(msg);
                 saleserver.getAllGroups(function (docs) {
                     socket.emit('setGroupsFromDB', docs);
                 });
+            });
+
+            socket.on('deleteCurGroupFromDB', function (msg) {
+                console.log("deleteCurGroupFromDB");
+                console.log(msg);
+                saleserver.deleteCurGroupFromDB(msg);
             });
 
 

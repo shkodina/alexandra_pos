@@ -149,11 +149,6 @@ angular.module('reporter', [
             templateUrl: 'topbarcontent.tmpl.html'
         }
     })
-    .directive('leftmainsidebarmenu', function () {
-        return {
-            templateUrl: 'leftmainsidebarmenu.tmpl.html'
-        }
-    })
     .directive('checkreportlist', function () {
         return {
             templateUrl: 'checkreportlist.tmpl.html'

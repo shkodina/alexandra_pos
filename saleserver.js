@@ -86,8 +86,6 @@ var saleserver = {
         });
     }
 
-
-
     , updateIngridientsByCheck  : function(check){
         var inglist = [];
         for (var i in check.list){
@@ -102,8 +100,8 @@ var saleserver = {
         }
 
         inglist.forEach(function(item){
-            console.log("ITEM");
-            console.log(item);
+            //console.log("ITEM");
+            //console.log(item);
             db_manager.ingridients.find({_id : item._id},function(err, docs){
                 if (err != null){
                     console.error(err);
@@ -133,17 +131,40 @@ var saleserver = {
         }).exec(function (err, docs) {
             sender(docs);
         });
-    },
+    }
 
-
-
-    addNewGroup: function (newgroup) {
+    , addNewGroup: function (newgroup) {
         db_manager.groups.insert(newgroup, function (err, newDoc) {
             if (err != null) {
                 console.log("error = ", err);
             }
         });
     }
+
+    , deleteCurGroupFromDB: function (group) {
+        console.log('deleteCurGroupFromDB from DB');
+        console.log(group);
+
+        // delete all drinks in group
+        db_manager.drinks.remove({
+            type: group.type
+        }, { multi: true }, function (err, numRemoved) {
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        });
+
+        // delete group
+        db_manager.groups.remove({
+            type: group.type
+        }, {}, function (err, numRemoved) {
+            if (err != null) {
+                console.log("error = ", err);
+            }
+        });
+    }
+
+
     //**********************************************************
     //**********************************************************
     //
@@ -342,7 +363,7 @@ var saleserver = {
     //**********************************************************
 
     , getReportAllChecks : function(sender){
-         console.log('getReportAllChecks from db');
+        // console.log('getReportAllChecks from db');
         db_manager.checks.find({}).sort({
             timestamp: 1
         }).exec(function (err, docs) {
@@ -351,7 +372,7 @@ var saleserver = {
     }
 
     , getReportAllKassaOper : function(sender){
-         console.log('getReportAllKassaOper from db');
+        // console.log('getReportAllKassaOper from db');
         db_manager.kassaoper.find({}).sort({
             timestamp: 1
         }).exec(function (err, docs) {
@@ -360,7 +381,7 @@ var saleserver = {
     }
 
     , getCheckByDate : function(date, sender){
-         console.log('getReportAllKassaOper from db');
+        // console.log('getReportAllKassaOper from db');
         db_manager.checks.find({date : date}).sort({
             timestamp: 1
         }).exec(function (err, docs) {
