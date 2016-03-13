@@ -6,8 +6,12 @@
 </div>
 <label class="col-sm-2 col-sm-2 control-label">Цена в рублях</label>
 
+<!--
+<input type="number" min="0.01" step="0.01">
+-->
+
 <div class="col-sm-10">
-    <input type="text" class="form-control" ng-model="main.curdrink.price">
+    <input type="number" min="0" step="1" class="form-control" ng-model="main.curdrink.price">
 </div>
 <p>.</p>
 <button type="button" class="btn btn-theme02" ng-click="main.addCurDrinkToDB()"><i class="fa fa-check"></i>Добавить в Базу
