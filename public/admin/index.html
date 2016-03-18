@@ -44,7 +44,14 @@
     TOP BAR CONTENT & NOTIFICATIONS
     *********************************************************************************************************************************************************** -->
     <!--header start-->
-    <header topbarcontent class="header black-bg">
+    <header  class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href="/main" class="logo"><b>{{main.title}}</b></a>
+        <div topbarcontent>
+        </div>
     </header>
     <!--header end-->
 
@@ -70,7 +77,13 @@
                     <div moneyworking class="form-panel" ng-if="main.moneyinuse">
                     </div>
 
+                    <div allgroups class="form-panel">
+                    </div>
+
                     <div inform class="form-panel">
+                    </div>
+
+                    <div addgroupe class="form-panel" ng-if="main.newgroup">
                     </div>
 
                     <div adddrink class="form-panel">
@@ -79,8 +92,7 @@
                     <div addingridient class="form-panel" ng-if="main.curdrink.ingredients">
                     </div>
 
-                   <div addgroupe class="form-panel" ng-if="main.newgroup">
-                    </div>
+
 
                     <div addnewingridienttodb class="form-panel" ng-if="main.ingridientnewfordb">
                     </div>

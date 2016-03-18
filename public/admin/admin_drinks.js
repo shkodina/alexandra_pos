@@ -19,7 +19,7 @@ angular.module('admindrinks', [
                 return {
                     type: "тип"
                     , name: "название"
-                    , price: "100"
+                    , price: 100
                     , ingredients: null
                 }
             }
@@ -34,7 +34,7 @@ angular.module('admindrinks', [
                     name: null
                     , mass: 'g'
                     , type: {}
-                    , count: "1000"
+                    , count: 1000
                     , limit: 1
                 }
             }
@@ -355,6 +355,11 @@ angular.module('admindrinks', [
     .directive('moneyworking', function () {
         return {
             templateUrl: 'moneyworking.tmpl.html'
+        }
+    })
+    .directive('allgroups', function () {
+        return {
+            templateUrl: 'allgroups.tmpl.html'
         }
     })
 

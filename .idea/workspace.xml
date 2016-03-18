@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a3977de-6a97-4d2b-9a84-652ada34cb6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TODO.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/reports/leftmainsidebarmenu.tmpl.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/allgroups.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/checks.db" afterPath="$PROJECT_DIR$/dbdata/checks.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/drinks.db" afterPath="$PROJECT_DIR$/dbdata/drinks.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/groups.db" afterPath="$PROJECT_DIR$/dbdata/groups.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/ingridients.db" afterPath="$PROJECT_DIR$/dbdata/ingridients.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/kassa.db" afterPath="$PROJECT_DIR$/dbdata/kassa.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbdata/kassaoper.db" afterPath="$PROJECT_DIR$/dbdata/kassaoper.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/addingridient.tmpl.html" afterPath="$PROJECT_DIR$/public/admin/addingridient.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/admin_drinks.js" afterPath="$PROJECT_DIR$/public/admin/admin_drinks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/inform.tmpl.html" afterPath="$PROJECT_DIR$/public/admin/inform.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/reports/index.html" afterPath="$PROJECT_DIR$/public/reports/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/reports/reporter.js" afterPath="$PROJECT_DIR$/public/reports/reporter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/reports/topbarcontent.tmpl.html" afterPath="$PROJECT_DIR$/public/reports/topbarcontent.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saleserver.js" afterPath="$PROJECT_DIR$/saleserver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/index.html" afterPath="$PROJECT_DIR$/public/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" afterPath="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/config/index.html" afterPath="$PROJECT_DIR$/public/config/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/config/topbarcontent.tmpl.html" afterPath="$PROJECT_DIR$/public/config/topbarcontent.tmpl.html" />
     </list>
     <ignored path="alexa_pos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +29,48 @@
     <favorites_list name="alexa_pos" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="79" column="34" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_drinks.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/admin_drinks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="361" column="40" selection-start-line="361" selection-start-column="26" selection-end-line="361" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="allgroups.tmpl.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/admin/allgroups.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3063063">
+              <caret line="8" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topbarcontent.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,24 +86,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/admindrinks/adddrink.tmpl.html" />
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
         <option value="$PROJECT_DIR$/public/admin/leftmainsidebarmenu.tmpl.html" />
         <option value="$PROJECT_DIR$/dbdata/kassa.db" />
         <option value="$PROJECT_DIR$/public/main/maincontroller.js" />
         <option value="$PROJECT_DIR$/public/admin/moneyworking.tmpl.html" />
         <option value="$PROJECT_DIR$/public/config/leftmainsidebarmenu.tmpl.html" />
-        <option value="$PROJECT_DIR$/public/config/topbarcontent.tmpl.html" />
         <option value="$PROJECT_DIR$/public/tamplate/topbarcontent.tmpl.html" />
         <option value="$PROJECT_DIR$/public/tamplate/leftmainsidebarmenu.tmpl.html" />
         <option value="$PROJECT_DIR$/public/config/createnewparam.tmpl.html" />
         <option value="$PROJECT_DIR$/dbdata/config.db" />
         <option value="$PROJECT_DIR$/mymodules/dbconf.json" />
         <option value="$PROJECT_DIR$/mymodules/dbmanager.js" />
-        <option value="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" />
-        <option value="$PROJECT_DIR$/public/admin/index.html" />
         <option value="$PROJECT_DIR$/mymodules/backuper.js" />
-        <option value="$PROJECT_DIR$/public/config/index.html" />
         <option value="$PROJECT_DIR$/public/config/inform.tmpl.html" />
         <option value="$PROJECT_DIR$/public/config/configparams.tmpl.html" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -81,7 +108,6 @@
         <option value="$PROJECT_DIR$/public/config/configurator.js" />
         <option value="$PROJECT_DIR$/public/admin/allingridientstable.tmpl.html" />
         <option value="$PROJECT_DIR$/mymodules/mailsender.js" />
-        <option value="$PROJECT_DIR$/dbdata/ingridients.db" />
         <option value="$PROJECT_DIR$/public/tamplate/index.html" />
         <option value="$PROJECT_DIR$/public/tamplate/appforindex.js" />
         <option value="$PROJECT_DIR$/public/reports/inform.tmpl.html" />
@@ -99,12 +125,18 @@
         <option value="$PROJECT_DIR$/dbdata/drinks.db" />
         <option value="$PROJECT_DIR$/dbdata/groups.db" />
         <option value="$PROJECT_DIR$/public/admin/addingridient.tmpl.html" />
-        <option value="$PROJECT_DIR$/public/admin/admin_drinks.js" />
         <option value="$PROJECT_DIR$/public/reports/topbarcontent.tmpl.html" />
         <option value="$PROJECT_DIR$/public/reports/leftmainsidebarmenu.tmpl.html" />
         <option value="$PROJECT_DIR$/public/reports/reporter.js" />
         <option value="$PROJECT_DIR$/public/reports/index.html" />
         <option value="$PROJECT_DIR$/TODO.txt" />
+        <option value="$PROJECT_DIR$/public/config/topbarcontent.tmpl.html" />
+        <option value="$PROJECT_DIR$/public/config/index.html" />
+        <option value="$PROJECT_DIR$/dbdata/ingridients.db" />
+        <option value="$PROJECT_DIR$/public/admin/index.html" />
+        <option value="$PROJECT_DIR$/public/admin/admin_drinks.js" />
+        <option value="$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html" />
+        <option value="$PROJECT_DIR$/public/admin/allgroups.tmpl.html" />
       </list>
     </option>
   </component>
@@ -190,7 +222,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reports" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -210,14 +242,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/forliveforever.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -318,13 +350,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31547618" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2514881" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34477124" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18760195" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29575163" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -356,27 +388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/admin/moneyworking.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3803132">
-          <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/topbarcontent.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8098434">
-          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/leftmainsidebarmenu.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7606264">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/tamplate/topbarcontent.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8098434">
@@ -416,7 +427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -438,7 +448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325893">
           <caret line="1189" column="0" selection-start-line="1189" selection-start-column="0" selection-end-line="1189" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -467,7 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1538463">
           <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -492,20 +500,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbdata/ingridients.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="93" selection-start-line="3" selection-start-column="96" selection-end-line="3" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymodules/mailsender.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71629214">
           <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -520,7 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24444444">
           <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,7 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="51" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -578,13 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.26923078">
           <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49279538">
-          <caret line="93" column="16" selection-start-line="91" selection-start-column="12" selection-end-line="93" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -602,18 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/addnewingridienttodb.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23919308">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/admin/allingridientstable.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9711816">
           <caret line="26" column="28" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,11 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.627907">
           <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#861#1344#0" expanded="false" />
-            <element signature="e#5905#6060#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19596542">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09798271">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,27 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63538873">
           <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding>
-            <element signature="e#1459#1569#0" expanded="false" />
-            <element signature="e#1692#1950#0" expanded="false" />
-            <element signature="e#2060#2228#0" expanded="false" />
-            <element signature="e#3192#3480#0" expanded="false" />
-            <element signature="e#3596#4320#0" expanded="false" />
-            <element signature="e#4439#4654#0" expanded="false" />
-            <element signature="e#12624#12694#0" expanded="false" />
-            <element signature="e#12760#12830#0" expanded="false" />
-            <element signature="e#13506#13653#0" expanded="false" />
-            <element signature="e#13719#14180#0" expanded="false" />
-            <element signature="e#14256#14581#0" expanded="false" />
-            <element signature="e#14649#14851#0" expanded="false" />
-            <element signature="e#14909#16653#0" expanded="false" />
-            <element signature="e#16718#17011#0" expanded="false" />
-            <element signature="e#19245#21904#0" expanded="false" />
-            <element signature="e#22210#24286#0" expanded="false" />
-            <element signature="e#24622#24821#0" expanded="false" />
-            <marker date="1457870014464" expanded="true" signature="23391:23702" placeholder="..." />
-            <marker date="1457870014464" expanded="true" signature="23493:23698" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -677,25 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19596542">
           <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/admin_drinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17962466">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding>
-            <element signature="e#11072#11152#0" expanded="false" />
-            <element signature="e#11198#11283#0" expanded="false" />
-            <element signature="e#11322#11400#0" expanded="false" />
-            <element signature="e#11442#11523#0" expanded="false" />
-            <element signature="e#11576#11668#0" expanded="false" />
-            <element signature="e#11714#11799#0" expanded="false" />
-            <element signature="e#11851#11942#0" expanded="false" />
-            <element signature="e#11994#12085#0" expanded="false" />
-            <element signature="e#12130#12214#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0749279">
           <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,31 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="49" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19596542">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2708933">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/reports/topbarcontent.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.685879">
           <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,15 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13672923">
           <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/reports/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03773585">
-          <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,14 +665,94 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49865952">
           <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding>
-            <element signature="e#4259#4342#0" expanded="false" />
-            <element signature="e#4381#4459#0" expanded="false" />
-            <element signature="e#4505#4590#0" expanded="false" />
-            <element signature="e#4638#4725#0" expanded="false" />
-            <element signature="e#4779#4872#0" expanded="false" />
-            <element signature="e#4920#5007#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config/topbarcontent.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34195402">
+          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/reports/topbarcontent.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/reports/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34195402">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/addnewingridienttodb.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.076923">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbdata/ingridients.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16229117">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="79" column="34" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/admin_drinks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="361" column="40" selection-start-line="361" selection-start-column="26" selection-end-line="361" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/main/informmain.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/topbarcontent.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/allgroups.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3063063">
+          <caret line="8" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
